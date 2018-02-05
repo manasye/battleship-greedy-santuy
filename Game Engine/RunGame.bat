@@ -1,1 +1,0 @@
-Battleships.exe -b "..\Reference Bots\C#" "..\Reference Bots\C#" --clog --pretty
