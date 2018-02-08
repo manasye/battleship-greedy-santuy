@@ -1,0 +1,48 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 64
+Map Dimensions : 10 x 10
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+########## Player
+~~~~~~~~~~
+~~~~~bBBb~
+~sss~~~~~~
+~~~~~~~~~~
+~~~~~~~~c~
+~~~~~~~~c~
+~~R~~~~~C~
+~~r~~D~~c~
+~~R~~d~~C~
+~~~~~~~~~~
+########## Opponent
+~!!!~!~!!~
+~*~*~!~~!!
+!!~~!~!!!!
+~!!~!!!~!!
+!!!!!!~!~!
+!!~~*!~~!~
+~~~!~!!~!~
+!~!~*~~!!!
+!*~***~~!~
+!~~!!!!!!!
+##########
+
+---------------------------
+Player Name: Adam ganteng
+Available Energy: 130
+Shots: 62
+Hit: 8
+Points: 80
+Arsenal: [SingleShot,DoubleShot,DiagonalCrossShot,CornerShot,CrossShot]
+Ships: [Destroyer,Battle Ship,Carrier,Cruiser]
+Status: Alive
+Shield: (Status: Deactivated, Charges: 9), Center Point: No Shield
+---------------------------
+Opponent: py3Bot
+Points: 130
+Ships: [Submarine,Destroyer,Battle Ship,Carrier,Cruiser]
+Status: Alive
+---------------------------

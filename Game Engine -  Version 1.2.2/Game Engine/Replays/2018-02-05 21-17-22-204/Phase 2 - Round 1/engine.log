@@ -1,0 +1,7 @@
+
+05-02-2018 21:31:22:905 - I: 	Added Command DoNothingCommand for Player Player 1
+05-02-2018 21:31:51:000 - I: 	Added Command DoNothingCommand for Player Player 2
+05-02-2018 21:31:51:000 - D: 	Beginning round processing
+05-02-2018 21:31:51:000 - D: 	Processing Player Commands
+05-02-2018 21:31:51:001 - D: 	Killing off players who have no ships left
+05-02-2018 21:31:51:001 - D: 	Round processing complete

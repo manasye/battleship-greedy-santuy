@@ -43,7 +43,7 @@ def fire_shot(gamestate):
     lastShot = sorted(cells,key=itemgetter('X','Y'))
 
     if(lastShot == null):
-        if(gamestate['MapDimension'] == 8):
+        if(gamestate['MapDimension'] == 7):
             #awalnya mau dimana
         if(gamestate['MapDimension'] == 10):
 
@@ -63,14 +63,13 @@ def fire_shot(gamestate):
             AlternateRandomShot(gamestate)
 
 
-    #
-    # targets = []
-    # for cell in opponent_map:
-    #     if not cell['Damaged'] and not cell['Missed']:
-    #         valid_cell = cell['X'], cell['Y']
-    #         targets.append(valid_cell)
-    # target = choice(targets)
-    # output_shot(*target)
+    targets = []
+    for cell in cells:
+        if not cell['Damaged'] and not cell['Missed']:
+            valid_cell = cell['X'], cell['Y']
+            targets.append(valid_cell)
+    target = choice(targets)
+    output_shot(*target)
     return
 
 
@@ -78,12 +77,31 @@ def place_ships():
     # Please place your ships in the following format <Shipname> <x> <y> <direction>
     # Ship names: Battleship, Cruiser, Carrier, Destroyer, Submarine
     # Directions: north east south west
-
-    ships = ['Battleship 1 0 north',
-             'Carrier 3 1 East',
-             'Cruiser 4 2 north',
-             'Destroyer 7 3 north',
-             'Submarine 1 8 East'
+# S : Submarine (3), Singleshot (1), SeekerMissle (36)
+# B : Battleship (4), Singleshot (1), DiagonalCrossShot (36)
+# C : Carrier (5), Singleshot (1), CornerShot (30)
+# R : Cruser (3), Singleshot (1), CrossShot (42)
+# D : Destroyer (2), Singleshot (1), DoubleShot (24)
+    if (map_size == 7):
+        ships = ['Battleship 3 1 East',
+             'Carrier 2 6 East',
+             'Cruiser 0 3 north',
+             'Destroyer 5 3 East',
+             'Submarine 2 2 north'
+             ]
+    elif (map_size == 10):
+        ships = ['Battleship 5 8 East',#
+             'Carrier 8 1 north',#
+             'Cruiser 2 1 north',#
+             'Destroyer 5 1 north',#
+             'Submarine 1 7 East'#
+             ]
+    else:
+        ships = ['Battleship 11 3 north',#
+             'Carrier 8 11 East',#
+             'Cruiser 2 3 north',#
+             'Destroyer 1 11 East',#
+             'Submarine 5 10 north'#
              ]
 
     with open(os.path.join(output_path, place_ship_file), 'w') as f_out:

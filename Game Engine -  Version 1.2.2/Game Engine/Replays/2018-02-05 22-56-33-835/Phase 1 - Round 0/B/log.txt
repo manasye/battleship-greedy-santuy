@@ -1,0 +1,14 @@
+
+05-02-2018 22:56:34:772 - I: 	Executing process python.exe "" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-56-33-835\Phase 1 - Round 0\B"
+05-02-2018 22:56:34:910 - I: 	Bot calibration complete and can run an additional 138ms due to environment startup
+05-02-2018 22:56:34:916 - D: 	Executing bot with following commands python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-56-33-835\Phase 1 - Round 0\B"
+05-02-2018 22:56:34:916 - I: 	Executing process python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-56-33-835\Phase 1 - Round 0\B"
+05-02-2018 22:56:34:946 - I: 	Bot has 4000ms to run before it will be forcefully killed
+05-02-2018 22:56:35:027 - I: 	Output from bot: Target sekarang = 
+05-02-2018 22:56:35:050 - E: 	Output from bot: Traceback (most recent call last):
+05-02-2018 22:56:35:050 - E: 	Output from bot:   File "bot.py", line 48, in <module>
+05-02-2018 22:56:35:050 - E: 	Output from bot:     print(target)
+05-02-2018 22:56:35:050 - E: 	Output from bot: NameError: name 'target' is not defined
+05-02-2018 22:56:35:055 - E: 	Output from bot: 
+05-02-2018 22:56:35:055 - I: 	Output from bot: 
+05-02-2018 22:56:35:057 - I: 	Your bots total execution time was 00:00:00.1398131

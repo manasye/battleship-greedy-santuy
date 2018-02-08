@@ -1,0 +1,13 @@
+
+05-02-2018 22:53:24:626 - I: 	Player Command DoNothingCommand failed because There was a problem during the placement of player's Adam ganteng ships (DoNothing), the round will be played over
+05-02-2018 22:53:24:634 - I: 	The first round has failed due to a bot's ships not all being placed
+05-02-2018 22:53:24:946 - D: 	Executing bot with following commands python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-22-360\Phase 1 - Round 3\B"
+05-02-2018 22:53:24:946 - I: 	Executing process python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-22-360\Phase 1 - Round 3\B"
+05-02-2018 22:53:24:997 - I: 	Bot has 4000ms to run before it will be forcefully killed
+05-02-2018 22:53:25:085 - E: 	Output from bot:   File "bot.py", line 51
+05-02-2018 22:53:25:085 - E: 	Output from bot:     def place_ships():
+05-02-2018 22:53:25:085 - E: 	Output from bot:       ^
+05-02-2018 22:53:25:085 - E: 	Output from bot: IndentationError: expected an indented block
+05-02-2018 22:53:25:088 - E: 	Output from bot: 
+05-02-2018 22:53:25:088 - I: 	Output from bot: 
+05-02-2018 22:53:25:089 - I: 	Your bots total execution time was 00:00:00.1434772

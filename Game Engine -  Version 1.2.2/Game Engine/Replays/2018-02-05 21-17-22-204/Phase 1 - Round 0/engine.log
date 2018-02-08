@@ -1,0 +1,10 @@
+
+05-02-2018 21:17:22:208 - I: 	Registered player Player 1
+05-02-2018 21:17:22:209 - I: 	Registered player Player 2
+05-02-2018 21:17:22:352 - I: 		OK!
+05-02-2018 21:21:58:694 - I: 	Added Command PlaceShipCommand for Player Player 1
+05-02-2018 21:22:57:448 - I: 	Added Command PlaceShipCommand for Player Player 2
+05-02-2018 21:22:57:450 - D: 	Beginning round processing
+05-02-2018 21:22:57:470 - D: 	Processing Player Commands
+05-02-2018 21:22:57:481 - D: 	Killing off players who have no ships left
+05-02-2018 21:22:57:481 - D: 	Round processing complete

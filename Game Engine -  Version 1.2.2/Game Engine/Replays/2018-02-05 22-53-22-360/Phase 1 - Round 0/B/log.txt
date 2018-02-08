@@ -1,0 +1,13 @@
+
+05-02-2018 22:53:23:246 - I: 	Executing process python.exe "" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-22-360\Phase 1 - Round 0\B"
+05-02-2018 22:53:23:423 - I: 	Bot calibration complete and can run an additional 177ms due to environment startup
+05-02-2018 22:53:23:429 - D: 	Executing bot with following commands python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-22-360\Phase 1 - Round 0\B"
+05-02-2018 22:53:23:429 - I: 	Executing process python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-22-360\Phase 1 - Round 0\B"
+05-02-2018 22:53:23:456 - I: 	Bot has 4000ms to run before it will be forcefully killed
+05-02-2018 22:53:23:548 - E: 	Output from bot:   File "bot.py", line 51
+05-02-2018 22:53:23:548 - E: 	Output from bot:     def place_ships():
+05-02-2018 22:53:23:548 - E: 	Output from bot:       ^
+05-02-2018 22:53:23:548 - E: 	Output from bot: IndentationError: expected an indented block
+05-02-2018 22:53:23:552 - E: 	Output from bot: 
+05-02-2018 22:53:23:552 - I: 	Output from bot: 
+05-02-2018 22:53:23:554 - I: 	Your bots total execution time was 00:00:00.1242316
