@@ -1,0 +1,21 @@
+
+08-02-2018 12:53:21:041 - I: 	Executing process  B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-53-19-619\Phase 1 - Round 0\B"
+08-02-2018 12:53:21:087 - E: 	Failed to run calibration test System.InvalidOperationException: Cannot start process because a file name has not been provided.
+   at System.Diagnostics.Process.Start()
+   at BotRunner.Util.ProcessHandler.StartProcessCommon() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\BotRunner\Util\ProcessHandler.cs:line 87
+   at BotRunner.Util.ProcessHandler.RunProcess() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\BotRunner\Util\ProcessHandler.cs:line 79
+   at TestHarness.TestHarnesses.Bot.Runners.DotNetRunner.RunCalibrationTest() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\BotRunner\Harness\Bot\Runners\DotNetRunner.cs:line 41
+   at TestHarness.TestHarnesses.Bot.BotRunner.CalibrateBot() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\BotRunner\Harness\Bot\BotRunner.cs:line 41
+08-02-2018 12:53:21:087 - I: 	Bot calibration complete and can run an additional 33ms due to environment startup
+08-02-2018 12:53:21:087 - D: 	Executing bot with following commands ..\..\Reference Bots\C#\ReferenceBot\bin\Debug\ReferenceBot.exe B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-53-19-619\Phase 1 - Round 0\B"
+08-02-2018 12:53:21:087 - I: 	Executing process ..\..\Reference Bots\C#\ReferenceBot\bin\Debug\ReferenceBot.exe B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-53-19-619\Phase 1 - Round 0\B"
+08-02-2018 12:53:21:275 - I: 	Bot has 4000ms to run before it will be forcefully killed
+08-02-2018 12:53:22:009 - I: 	Output from bot: [BOT]	Placeship command: Battleship 0 4 East
+08-02-2018 12:53:22:009 - I: 	Output from bot: Carrier 2 1 East
+08-02-2018 12:53:22:009 - I: 	Output from bot: Cruiser 4 0 East
+08-02-2018 12:53:22:009 - I: 	Output from bot: Destroyer 8 2 North
+08-02-2018 12:53:22:009 - I: 	Output from bot: Submarine 4 4 North
+08-02-2018 12:53:22:009 - I: 	Output from bot: [BOT]	Bot finished in 494 ms.
+08-02-2018 12:53:22:009 - I: 	Output from bot: 
+08-02-2018 12:53:22:009 - E: 	Output from bot: 
+08-02-2018 12:53:22:009 - I: 	Your bots total execution time was 00:00:00.9287769

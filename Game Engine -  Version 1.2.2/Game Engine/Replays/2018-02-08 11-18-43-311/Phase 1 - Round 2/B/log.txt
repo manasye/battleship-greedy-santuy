@@ -1,0 +1,10 @@
+
+08-02-2018 11:18:47:374 - I: 	Player Command DoNothingCommand failed because There was a problem during the placement of player's John ships (DoNothing), the round will be played over
+08-02-2018 11:18:47:390 - I: 	The first round has failed due to a bot's ships not all being placed
+08-02-2018 11:18:47:999 - D: 	Executing bot with following commands java -Xms512m -jar "src\main\java\za\co\entelect\challenge" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 11-18-43-311\Phase 1 - Round 2\B"
+08-02-2018 11:18:47:999 - I: 	Executing process java -Xms512m -jar "src\main\java\za\co\entelect\challenge" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 11-18-43-311\Phase 1 - Round 2\B"
+08-02-2018 11:18:48:109 - I: 	Bot has 4000ms to run before it will be forcefully killed
+08-02-2018 11:18:48:352 - E: 	Output from bot: Error: Unable to access jarfile src\main\java\za\co\entelect\challenge
+08-02-2018 11:18:48:352 - I: 	Output from bot: 
+08-02-2018 11:18:48:352 - E: 	Output from bot: 
+08-02-2018 11:18:48:352 - I: 	Your bots total execution time was 00:00:00.3460906

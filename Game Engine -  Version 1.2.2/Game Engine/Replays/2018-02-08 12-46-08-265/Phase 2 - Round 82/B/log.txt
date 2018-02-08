@@ -1,0 +1,8 @@
+
+08-02-2018 12:46:56:597 - I: 	Player Command GameEngine.Commands.PlayerCommands.FireDoubleShotCommand failed because manasye's Battleship has been destroyed and cannot use this shot
+08-02-2018 12:46:57:019 - D: 	Executing bot with following commands python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-46-08-265\Phase 2 - Round 82\B"
+08-02-2018 12:46:57:019 - I: 	Executing process python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-46-08-265\Phase 2 - Round 82\B"
+08-02-2018 12:46:57:034 - I: 	Bot has 4000ms to run before it will be forcefully killed
+08-02-2018 12:46:57:112 - E: 	Output from bot: 
+08-02-2018 12:46:57:112 - I: 	Output from bot: 
+08-02-2018 12:46:57:112 - I: 	Your bots total execution time was 00:00:00.0922376

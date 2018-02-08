@@ -1,0 +1,48 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 78
+Map Dimensions : 10 x 10
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+########## Player
+~~~~~~~~~~
+~sss~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~r~~d~~
+~B~~r~~D~~
+~b~~r~~~~~
+~B~CcCcc~~
+~B~~~~~~~~
+########## Opponent
+~~!~!~~!~~
+~~*~!~~!!!
+!~~!~~~~~!
+~~!~!!~~~~
+~~~~~~!!!~
+!~~~~~!~~~
+~~~~~~~~~~
+!*~~~~!~~~
+~~~~~~~~~~
+~~~!!~~~~~
+##########
+
+---------------------------
+Player Name: John
+Available Energy: 207
+Shots: 27
+Hit: 2
+Points: 20
+Arsenal: [SingleShot,DoubleShot,DiagonalCrossShot,CornerShot]
+Ships: [Destroyer,Battle Ship,Carrier]
+Status: Alive
+Shield: (Status: Deactivated, Charges: 11), Center Point: No Shield
+---------------------------
+Opponent: py3Bot
+Points: 170
+Ships: [Submarine,Destroyer,Battle Ship,Carrier,Cruiser]
+Status: Alive
+---------------------------

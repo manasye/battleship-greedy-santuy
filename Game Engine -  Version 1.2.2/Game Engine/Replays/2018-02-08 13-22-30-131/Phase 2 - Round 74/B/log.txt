@@ -1,0 +1,9 @@
+
+08-02-2018 13:23:24:920 - D: 	Executing bot with following commands ..\..\Reference Bots\C#\ReferenceBot\bin\Debug\ReferenceBot.exe B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 13-22-30-131\Phase 2 - Round 74\B"
+08-02-2018 13:23:24:920 - I: 	Executing process ..\..\Reference Bots\C#\ReferenceBot\bin\Debug\ReferenceBot.exe B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 13-22-30-131\Phase 2 - Round 74\B"
+08-02-2018 13:23:24:935 - I: 	Bot has 4000ms to run before it will be forcefully killed
+08-02-2018 13:23:25:154 - I: 	Output from bot: [BOT]	Command: 1,5,5
+08-02-2018 13:23:25:154 - I: 	Output from bot: [BOT]	Bot finished in 188 ms.
+08-02-2018 13:23:25:170 - I: 	Output from bot: 
+08-02-2018 13:23:25:170 - E: 	Output from bot: 
+08-02-2018 13:23:25:170 - I: 	Your bots total execution time was 00:00:00.2538775

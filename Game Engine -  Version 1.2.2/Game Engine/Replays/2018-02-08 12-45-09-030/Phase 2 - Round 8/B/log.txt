@@ -1,0 +1,8 @@
+
+08-02-2018 12:45:14:600 - I: 	Player Command GameEngine.Commands.PlayerCommands.FireDoubleShotCommand failed because The player does not have sufficient energy to use the selected weapon
+08-02-2018 12:45:15:100 - D: 	Executing bot with following commands python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-45-09-030\Phase 2 - Round 8\B"
+08-02-2018 12:45:15:100 - I: 	Executing process python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 12-45-09-030\Phase 2 - Round 8\B"
+08-02-2018 12:45:15:116 - I: 	Bot has 4000ms to run before it will be forcefully killed
+08-02-2018 12:45:15:287 - E: 	Output from bot: 
+08-02-2018 12:45:15:287 - I: 	Output from bot: 
+08-02-2018 12:45:15:303 - I: 	Your bots total execution time was 00:00:00.1908919

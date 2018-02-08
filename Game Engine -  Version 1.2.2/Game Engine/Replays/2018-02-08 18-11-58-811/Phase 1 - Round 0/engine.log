@@ -1,0 +1,12 @@
+
+08-02-2018 18:11:58:978 - I: 	Loaded bot ..\..\Our Bot
+08-02-2018 18:11:58:997 - I: 	Loaded bot ..\..\Java\SampleBot
+08-02-2018 18:11:58:997 - I: 	Registered player manasye
+08-02-2018 18:11:58:997 - I: 	Registered player John
+08-02-2018 18:11:59:040 - I: 		OK!
+08-02-2018 18:12:00:982 - I: 	Added Command PlaceShipCommand for Player manasye
+08-02-2018 18:12:02:941 - I: 	Added Command PlaceShipCommand for Player John
+08-02-2018 18:12:02:945 - D: 	Beginning round processing
+08-02-2018 18:12:02:992 - D: 	Processing Player Commands
+08-02-2018 18:12:03:027 - D: 	Killing off players who have no ships left
+08-02-2018 18:12:03:027 - D: 	Round processing complete

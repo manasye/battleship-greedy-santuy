@@ -1,0 +1,10 @@
+
+08-02-2018 18:10:51:735 - I: 	Player Command FireSingleShotCommand failed because Coordinates are out of bounds.
+Parameter name: coordinate
+08-02-2018 18:10:52:237 - D: 	Executing bot with following commands java -Xms512m -jar "target\sample-bot-1.0-SNAPSHOT-jar-with-dependencies.jar" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 18-09-06-430\Phase 2 - Round 90\B"
+08-02-2018 18:10:52:237 - I: 	Executing process java -Xms512m -jar "target\sample-bot-1.0-SNAPSHOT-jar-with-dependencies.jar" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 18-09-06-430\Phase 2 - Round 90\B"
+08-02-2018 18:10:52:247 - I: 	Bot has 4000ms to run before it will be forcefully killed
+08-02-2018 18:10:52:529 - I: 	Output from bot: [Bot]	Bot finished in 117 ms.
+08-02-2018 18:10:52:532 - I: 	Output from bot: 
+08-02-2018 18:10:52:532 - E: 	Output from bot: 
+08-02-2018 18:10:52:541 - I: 	Your bots total execution time was 00:00:00.3043685

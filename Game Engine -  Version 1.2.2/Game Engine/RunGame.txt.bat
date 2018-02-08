@@ -1,1 +1,1 @@
-Battleships.exe -b "..\Reference Bots\Python" "..\Reference Bots\" --clog --pretty
+Battleships.exe -b "..\Reference Bots\Python3" "..\..\Java\SampleBot" --clog --debug --pretty 
