@@ -1,0 +1,13 @@
+
+09-02-2018 18:01:00:453 - I: 	Executing process python.exe "" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 18-00-56-575\Phase 1 - Round 0\B"
+09-02-2018 18:01:00:672 - I: 	Bot calibration complete and can run an additional 211ms due to environment startup
+09-02-2018 18:01:00:672 - D: 	Executing bot with following commands python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 18-00-56-575\Phase 1 - Round 0\B"
+09-02-2018 18:01:00:672 - I: 	Executing process python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 18-00-56-575\Phase 1 - Round 0\B"
+09-02-2018 18:01:00:719 - I: 	Bot has 4000ms to run before it will be forcefully killed
+09-02-2018 18:01:00:860 - E: 	Output from bot:   File "bot.py", line 72
+09-02-2018 18:01:00:860 - E: 	Output from bot:     json.dump(lastShot,f_out)
+09-02-2018 18:01:00:860 - E: 	Output from bot:                             ^
+09-02-2018 18:01:00:860 - E: 	Output from bot: TabError: inconsistent use of tabs and spaces in indentation
+09-02-2018 18:01:00:860 - E: 	Output from bot: 
+09-02-2018 18:01:00:860 - I: 	Output from bot: 
+09-02-2018 18:01:00:860 - I: 	Your bots total execution time was 00:00:00.1817762
