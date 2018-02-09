@@ -1,7 +1,0 @@
-
-05-02-2018 22:53:23:953 - I: 	Added Command PlaceShipCommand for Player py3Bot
-05-02-2018 22:53:24:097 - I: 	Added Command DoNothingCommand for Player Adam ganteng
-05-02-2018 22:53:24:098 - D: 	Beginning round processing
-05-02-2018 22:53:24:098 - D: 	Processing Player Commands
-05-02-2018 22:53:24:100 - E: 	Failed to process command DoNothingCommand for player Adam gantengGameEngine.Exceptions.InvalidCommandException: There was a problem during the placement of player's Adam ganteng ships (DoNothing), the round will be played over
-   at GameEngine.Engine.GameRoundProcessor.ProcessPlayerCommands() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\GameEngine\Engine\GameRoundProcessor.cs:line 215

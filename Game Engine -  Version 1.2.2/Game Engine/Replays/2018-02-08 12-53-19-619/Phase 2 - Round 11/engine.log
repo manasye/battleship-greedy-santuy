@@ -1,7 +1,0 @@
-
-08-02-2018 12:53:30:115 - I: 	Added Command FireSingleShotCommand for Player py3Bot
-08-02-2018 12:53:30:380 - I: 	Added Command GameEngine.Commands.PlayerCommands.FireDoubleShotCommand for Player John
-08-02-2018 12:53:30:396 - D: 	Beginning round processing
-08-02-2018 12:53:30:396 - D: 	Processing Player Commands
-08-02-2018 12:53:30:396 - D: 	Killing off players who have no ships left
-08-02-2018 12:53:30:396 - D: 	Round processing complete

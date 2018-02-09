@@ -1,7 +1,0 @@
-
-05-02-2018 22:53:54:672 - D: 	Executing bot with following commands python.exe "bot.py" A "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-40-002\Phase 2 - Round 25\A"
-05-02-2018 22:53:54:672 - I: 	Executing process python.exe "bot.py" A "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-05 22-53-40-002\Phase 2 - Round 25\A"
-05-02-2018 22:53:54:706 - I: 	Bot has 4000ms to run before it will be forcefully killed
-05-02-2018 22:53:54:828 - E: 	Output from bot: 
-05-02-2018 22:53:54:828 - I: 	Output from bot: 
-05-02-2018 22:53:54:830 - I: 	Your bots total execution time was 00:00:00.1571915
