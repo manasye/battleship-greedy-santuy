@@ -7,6 +7,7 @@ from operator import itemgetter, attrgetter, methodcaller
 command_file = "command.txt"
 place_ship_file = "place.txt"
 game_state_file = "state.json"
+kebutuhan = "kebutuhan.txt"
 output_path = '.'
 map_size = 0
 
@@ -29,6 +30,9 @@ def output_shot(x, y):
         f_out.write('{},{},{}'.format(move, x, y))
         f_out.write('\n')
     pass
+
+def isMentok(x, y):
+    if ()
 
 
 def fire_shot(gamestate):
@@ -78,9 +82,9 @@ def place_ships():
     # Ship names: Battleship, Cruiser, Carrier, Destroyer, Submarine
     # Directions: north east south west
 # S : Submarine (3), Singleshot (1), SeekerMissle (36)
-# B : Battleship (4), Singleshot (1), DiagonalCrossShot (36)
-# C : Carrier (5), Singleshot (1), CornerShot (30)
-# R : Cruser (3), Singleshot (1), CrossShot (42)
+# B : Battleship (4), Singleshot (1), DiagonalCrossShot (36) x
+# C : Carrier (5), Singleshot (1), CornerShot (30) pojok doang
+# R : Cruser (3), Singleshot (1), CrossShot (42) +
 # D : Destroyer (2), Singleshot (1), DoubleShot (24)
     if (map_size == 7):
         ships = ['Battleship 3 1 East',
