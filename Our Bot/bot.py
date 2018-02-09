@@ -7,7 +7,6 @@ from operator import itemgetter, attrgetter, methodcaller
 command_file = "command.txt"
 place_ship_file = "place.txt"
 game_state_file = "state.json"
-kebutuhan = "kebutuhan.txt"
 output_path = '.'
 map_size = 0
 
@@ -38,28 +37,79 @@ def fire_shot(gamestate):
     #  code 1 is your choice)
 
     cells = gamestate['OpponentMap']['Cells']
-    # currEnergy = gamestate['PlayerMap']['Owner']['Energy']
-    # size = gamestate['MapDimension']
-    #
-    # lastShot = [elem for elem in cells if elem.Damaged || elem.Missed][-1]
-    #
-    # try:
+    currEnergy = gamestate['PlayerMap']['Owner']['Energy']
+    size = gamestate['MapDimension']
+    
+    if (os.path.exists(os.path.join(output_path, "..\..\data.txt")) == False):
+        lastShot = {"Track":(-1,-1),"Attack":(-1,-1),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0,"default" = 1}
+        with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
+            json.dump(lastShot,f_out)
 
-    #
-    # else:
-    #     x = lastShot['X']
-    #     y = lastShot['Y']
-    #
-    #     if(x + 2 < size):
-    #         x += 2
-    #     else:
-    #         x = 0
-    #         y ++
-    #
-    #     if(y >= size):
-    #         AlternateRandomShot(gamestate)
-    #
+    with open(os.path.join(output_path,"..\..\data.txt","r")) as f_in:
+        data = json.load(f_in)
 
+    (x1,y1) = data["Track"]
+    (x2,y2) = data["Attack"]
+    bKiri = data["kiri"]
+    bKanan = data["kanan"]
+    bAtas = data["atas"]
+    bBawah = data["bawah"]
+    phase = data["fase"]
+    cDes = data["jumlahhancur"]
+    bDefault = data["default"]
+    
+    if (x1 == -1 and y1 == -1):
+        #Baru mulai gamenya
+        x1 += 1
+        y1 += 1
+        x2 += 1
+        y2 += 1
+    else:
+        for cell in cells:
+            if (cell['X'] == x1 and cell['Y'] == y1):
+                cellTrack = cell
+
+            if (cell['X'] == x2 and cell['Y'] == y2):
+                cellAttack = cell
+
+
+        # if (not cellTrack['Damaged'] and not cellAttack['Damaged']):
+        #     target = cellTrack['X'], cellTrack['Y']
+        # else:
+        #     if (cellTrack['Damaged']):
+
+        if(cellTrack['Damaged']):
+            bDefault = 0
+
+        if(bDefault):
+            if(phase == 1):
+                x1 += 1
+                x2 += 1
+                y1 += 1
+                y2 += 1 
+        else:
+            if 
+                if (cellTrack['Missed']):
+                    if (not bKiri) :
+                        bKiri = 1
+                    elif (not bAtas) :
+                        bAtas = 1
+                    elif (not bKanan) :
+                        bKanan = 1
+                    elif (not bBawah) :
+                        bBawah = 1
+                if (not bKiri):
+                    x2 -= 1
+                elif (not bAtas):
+                    y2 += 1
+                elif (not bKanan):
+                    x2 += 1
+                elif (not bBawah):
+                    y2 -= 1
+
+
+
+<<<<<<< HEAD
     # targets = []
     # for cell in cells:
     #     if not cell['Damaged'] and not cell['Missed']:
@@ -70,9 +120,26 @@ def fire_shot(gamestate):
         lastShot = {"Kembali":(2,3),"Sekarang":(1,3),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0}
         with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
     	       json.dump(lastShot,f_out)
+=======
+    targets = []
+    for cell in cells:
+        if not cell['Damaged'] and not cell['Missed']:
+            valid_cell = cell['X'], cell['Y']
+            targets.append(valid_cell)
+    target = choice(targets)
+>>>>>>> a8467d922ad48bec8a690e1a043a5dcca2d4df63
     output_shot(*target)
+
     return
 
+def hitung_hancur(gamestate):
+    count = 0
+    ships = gamestate['OpponentMap']['Ships']
+    for ship in ships:
+        if ship['Destroyed']:
+            count+=1
+
+    return count
 
 def place_ships():
     # Please place your ships in the following format <Shipname> <x> <y> <direction>
