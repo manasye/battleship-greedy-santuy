@@ -1,0 +1,14 @@
+
+09-02-2018 22:29:04:481 - I: 	Bot is sending to many do nothing commands, if this continues it the bot will be killed off
+09-02-2018 22:29:04:481 - D: 	Executing bot with following commands python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 22-28-19-000\Phase 2 - Round 47\B"
+09-02-2018 22:29:04:481 - I: 	Executing process python.exe "bot.py" B "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 22-28-19-000\Phase 2 - Round 47\B"
+09-02-2018 22:29:04:513 - I: 	Bot has 4000ms to run before it will be forcefully killed
+09-02-2018 22:29:04:731 - E: 	Output from bot: 
+09-02-2018 22:29:04:731 - I: 	Output from bot: 
+09-02-2018 22:29:04:747 - I: 	Your bots total execution time was 00:00:00.2536424
+09-02-2018 22:29:04:747 - E: 	Failed to read move file from botSystem.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at TestHarness.TestHarnesses.Bot.BotRunner.GetBotCommandFromFile() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\BotRunner\Harness\Bot\BotRunner.cs:line 175
+   at TestHarness.TestHarnesses.Bot.BotRunner.GetBotCommand() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\BotRunner\Harness\Bot\BotRunner.cs:line 124

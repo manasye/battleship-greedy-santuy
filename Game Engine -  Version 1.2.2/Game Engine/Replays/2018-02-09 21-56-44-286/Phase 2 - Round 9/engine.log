@@ -1,0 +1,17 @@
+
+09-02-2018 21:56:57:108 - I: 	Added Command FireSingleShotCommand for Player py3Bot
+09-02-2018 21:56:57:419 - I: 	Added Command FireSingleShotCommand for Player Adam ganteng
+09-02-2018 21:56:57:423 - D: 	Beginning round processing
+09-02-2018 21:56:57:423 - D: 	Processing Player Commands
+09-02-2018 21:56:57:439 - E: 	Failed to process command FireSingleShotCommand for player Adam gantengGameEngine.Exceptions.InvalidCommandException: Coordinates are out of bounds.
+Parameter name: coordinate ---> System.ArgumentException: Coordinates are out of bounds.
+Parameter name: coordinate
+   at Domain.Maps.PlayerMap.Shoot(Weapon weapon, List`1 areaOfEffect, Int32 currentRound) in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\Domain\Maps\PlayerMap.cs:line 128
+   at Domain.Games.GameMap.Shoot(PlayerType player, List`1 targets, WeaponType weaponType) in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\Domain\Games\GameMap.cs:line 88
+   at GameEngine.Commands.PlayerCommands.FireSingleShotCommand.PerformCommand(GameMap gameMap, BattleshipPlayer player) in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\GameEngine\Commands\PlayerCommands\FireSingleShotCommand.cs:line 27
+   --- End of inner exception stack trace ---
+   at GameEngine.Commands.PlayerCommands.FireSingleShotCommand.PerformCommand(GameMap gameMap, BattleshipPlayer player) in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\GameEngine\Commands\PlayerCommands\FireSingleShotCommand.cs:line 31
+   at GameEngine.Engine.GameRoundProcessor.ProcessPlayerCommands() in C:\Development\Entelect Challenge\2017-Battleships\GameEngine\Battleships\GameEngine\Engine\GameRoundProcessor.cs:line 213
+
+09-02-2018 21:56:57:521 - D: 	Killing off players who have no ships left
+09-02-2018 21:56:57:521 - D: 	Round processing complete

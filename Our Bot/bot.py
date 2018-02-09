@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import copy
 from random import choice
 from operator import itemgetter, attrgetter, methodcaller
 
@@ -44,12 +45,12 @@ def fire_shot(gamestate):
     # Check if the file is exist(for initial purposes)
     if (os.path.exists(os.path.join(output_path, "..\..\data.txt")) == False):
         # Dummy variable
-        lastShot = {"Track":(-1,-1),"Attack":(-1,-1),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0,"default" = 1}
+        lastShot = {"Track":(-1,-1),"Attack":(-1,-1),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0,"default":1}
         with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
             json.dump(lastShot,f_out)
 
     # Read the file
-    with open(os.path.join(output_path,"..\..\data.txt","r")) as f_in:
+    with open(os.path.join(output_path,"..\..\data.txt"),"r") as f_in:
         data = json.load(f_in)
 
     # Selector
@@ -89,6 +90,16 @@ def fire_shot(gamestate):
         if(cellTrack['Damaged']):
             bDefault = 0
 
+        if cDes == hitung_hancur(gamestate):
+                bDefault = 1
+                cDes += 1
+                bKiri = 0
+                bAtas = 0
+                bKanan = 0
+                bBawah = 0
+                x2 = int(cellTrack['X'])
+                y2 = int(cellTrack['Y'])
+
         # If we missed,move based on the Phase
         # 1: diagonal(northeast)
         # 2: diagonal(northwest)
@@ -96,12 +107,14 @@ def fire_shot(gamestate):
         # 4: horizontal
         # 5: random search
         if(bDefault):
+            x2 = x1
+            y2 = y1
             if(phase == 1):
                 x1 += 1
                 x2 += 1
                 y1 += 1
                 y2 += 1
-                if(x1 > map_size):
+                if(x1 >= map_size):
                     phase = 2
                     x1 = map_size - 1
                     x2 = map_size - 1
@@ -112,50 +125,67 @@ def fire_shot(gamestate):
                 x2 -= 1
                 y1 += 1
                 y2 += 1
-                if(y1 > map_size):
+                if(y1 >= map_size):
                     phase = 3
-                    x1 = map_size/2
-                    x2 = map_size/2
+                    x1 = int(map_size/2)
+                    x2 = int(map_size/2)
                     y1 = 0
                     y2 = 0
             elif(phase == 3):
                 y1 += 1
                 y2 += 1
-                if(y1 > map_size):
+                if(y1 >= map_size):
                     phase = 4
-                    y1 = map_size/2
-                    y2 = map_size/2
+                    y1 = int(map_size/2)
+                    y2 = int(map_size/2)
                     x1 = 0
                     x2 = 0
             elif(phase == 4):
                 x1 += 1
                 x2 += 1
-                if(x1 > map_size):
+                if(x1 >= map_size):
                     phase = 5
             else:
                 (x1,y1) = randomShot(gamestate)
-                (x2,y2) = randomShot(gamestate)
+                x2 = x1
+                y2 = y1
 
         else:
-            if
-                if (cellTrack['Missed']):
-                    if (not bKiri) :
-                        bKiri = 1
-                    elif (not bAtas) :
-                        bAtas = 1
-                    elif (not bKanan) :
-                        bKanan = 1
-                    elif (not bBawah) :
-                        bBawah = 1
+            #The ship not yet destroyed
+            #Set whether the direction is wrong
+            if (cellAttack['Missed']):
                 if (not bKiri):
-                    x2 -= 1
+                    bKiri = 1
                 elif (not bAtas):
-                    y2 += 1
+                    bAtas = 1
                 elif (not bKanan):
-                    x2 += 1
-                elif (not bBawah):
-                    y2 -= 1
+                    bKanan = 1
+                x2 = int(cellTrack['X'])
+                y2 = int(cellTrack['Y'])
 
+            #If the bot detects the placement of the attacked ship, it will only attack in a certain direction.
+            if (cellAttack['Damaged'] and cellAttack['X'] != cellTrack['X'] and cellAttack['Y'] != cellTrack['Y']):
+                if (not bKiri):
+                    bAtas = 1
+                elif (not bAtas):
+                    bKanan = 1
+
+            #Conditional branch.
+            if (not bKiri):
+                x2 -= 1
+            elif (not bAtas):
+                y2 += 1
+            elif (not bKanan):
+                x2 += 1
+            elif (not bBawah):
+                y2 -= 1
+
+
+    target = (x2,y2)
+    lastShot = {"Track":(x1,y1),"Attack":(x2,y2),"kiri":bKiri,"kanan":bKanan,"atas":bAtas,"bawah":bBawah,"fase":phase,"jumlahhancur":cDes,"default":bDefault}
+    with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
+        json.dump(lastShot,f_out)
+    output_shot(*target)
 
     # targets = []
     # for cell in cells:
@@ -163,18 +193,14 @@ def fire_shot(gamestate):
     #         valid_cell = cell['X'], cell['Y']
     #         targets.append(valid_cell)
     # target = choice(targets)
-    if os.path.exists(os.path.join(output_path, "..\..\data.txt")) == False:
-        lastShot = {"Kembali":(2,3),"Sekarang":(1,3),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0}
-        with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
-    	       json.dump(lastShot,f_out)
 
-    targets = []
-    for cell in cells:
-        if not cell['Damaged'] and not cell['Missed']:
-            valid_cell = cell['X'], cell['Y']
-            targets.append(valid_cell)
-    target = choice(targets)
-    output_shot(*target)
+    # targets = []
+    # for cell in cells:
+    #     if not cell['Damaged'] and not cell['Missed']:
+    #         valid_cell = cell['X'], cell['Y']
+    #         targets.append(valid_cell)
+    # target = choice(targets)
+    # output_shot(*target)
 
     return
 
