@@ -1,9 +1,0 @@
-
-09-02-2018 17:38:40:459 - I: 	Executing process python.exe "" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 17-38-37-851\Phase 1 - Round 0\B"
-09-02-2018 17:38:40:553 - I: 	Bot calibration complete and can run an additional 96ms due to environment startup
-09-02-2018 17:38:40:569 - D: 	Executing bot with following commands python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 17-38-37-851\Phase 1 - Round 0\B"
-09-02-2018 17:38:40:569 - I: 	Executing process python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 17-38-37-851\Phase 1 - Round 0\B"
-09-02-2018 17:38:40:569 - I: 	Bot has 4000ms to run before it will be forcefully killed
-09-02-2018 17:38:40:679 - I: 	Output from bot: 
-09-02-2018 17:38:40:679 - E: 	Output from bot: 
-09-02-2018 17:38:40:683 - I: 	Your bots total execution time was 00:00:00.1115163

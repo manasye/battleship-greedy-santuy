@@ -101,7 +101,7 @@ def fire_shot(gamestate):
                 x2 += 1
                 y1 += 1
                 y2 += 1
-                if(x1 > map_size):
+                if(x1 >= map_size):
                     phase = 2
                     x1 = map_size - 1
                     x2 = map_size - 1
@@ -112,7 +112,7 @@ def fire_shot(gamestate):
                 x2 -= 1
                 y1 += 1
                 y2 += 1
-                if(y1 > map_size):
+                if(y1 >= map_size):
                     phase = 3
                     x1 = map_size/2
                     x2 = map_size/2
@@ -121,7 +121,7 @@ def fire_shot(gamestate):
             elif(phase == 3):
                 y1 += 1
                 y2 += 1
-                if(y1 > map_size):
+                if(y1 >= map_size):
                     phase = 4
                     y1 = map_size/2
                     y2 = map_size/2
@@ -130,11 +130,12 @@ def fire_shot(gamestate):
             elif(phase == 4):
                 x1 += 1
                 x2 += 1
-                if(x1 > map_size):
+                if(x1 >= map_size):
                     phase = 5
             else:
                 (x1,y1) = randomShot(gamestate)
-                (x2,y2) = randomShot(gamestate)
+                x2 = x1
+                y2 = y1
 
         else:
             if
@@ -204,7 +205,7 @@ def randomShot(gamestate):
 
 # Function to place the ship in phase 1
 def place_ships():
-    
+
 # S : Submarine (3), Singleshot (1), SeekerMissle (36)
 # B : Battleship (4), Singleshot (1), DiagonalCrossShot (36) x
 # C : Carrier (5), Singleshot (1), CornerShot (30) pojok doang
