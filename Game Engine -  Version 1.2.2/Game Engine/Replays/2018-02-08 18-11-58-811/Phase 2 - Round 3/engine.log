@@ -1,7 +1,0 @@
-
-08-02-2018 18:20:05:359 - I: 	Added Command DoNothingCommand for Player manasye
-08-02-2018 18:20:05:752 - I: 	Added Command FireSingleShotCommand for Player John
-08-02-2018 18:20:05:767 - D: 	Beginning round processing
-08-02-2018 18:20:05:767 - D: 	Processing Player Commands
-08-02-2018 18:20:05:767 - D: 	Killing off players who have no ships left
-08-02-2018 18:20:05:767 - D: 	Round processing complete

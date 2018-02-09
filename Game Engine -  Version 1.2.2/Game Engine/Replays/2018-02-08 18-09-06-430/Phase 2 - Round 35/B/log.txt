@@ -1,8 +1,0 @@
-
-08-02-2018 18:09:46:213 - D: 	Executing bot with following commands java -Xms512m -jar "target\sample-bot-1.0-SNAPSHOT-jar-with-dependencies.jar" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 18-09-06-430\Phase 2 - Round 35\B"
-08-02-2018 18:09:46:213 - I: 	Executing process java -Xms512m -jar "target\sample-bot-1.0-SNAPSHOT-jar-with-dependencies.jar" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-08 18-09-06-430\Phase 2 - Round 35\B"
-08-02-2018 18:09:46:221 - I: 	Bot has 4000ms to run before it will be forcefully killed
-08-02-2018 18:09:46:504 - I: 	Output from bot: [Bot]	Bot finished in 119 ms.
-08-02-2018 18:09:46:508 - E: 	Output from bot: 
-08-02-2018 18:09:46:508 - I: 	Output from bot: 
-08-02-2018 18:09:46:517 - I: 	Your bots total execution time was 00:00:00.3042029

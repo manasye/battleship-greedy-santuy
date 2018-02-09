@@ -37,31 +37,27 @@ def fire_shot(gamestate):
     #  code 1 is your choice)
 
     cells = gamestate['OpponentMap']['Cells']
-    currEnergy = gamestate['PlayerMap']['Owner']['Energy']
-    size = gamestate['MapDimension']
+    # currEnergy = gamestate['PlayerMap']['Owner']['Energy']
+    # size = gamestate['MapDimension']
+    #
+    # lastShot = [elem for elem in cells if elem.Damaged || elem.Missed][-1]
+    #
+    # try:
 
-    lastShot = sorted(cells,key=itemgetter('X','Y'))
-
-    if(lastShot == null):
-        if(gamestate['MapDimension'] == 7):
-            #awalnya mau dimana
-        if(gamestate['MapDimension'] == 10):
-
-        if(gamestate['MapDimension'] == 14):
-
-    else:
-        x = lastShot['X']
-        y = lastShot['Y']
-
-        if(x + 2 < size):
-            x += 2
-        else:
-            x = 0
-            y ++
-
-        if(y >= size):
-            AlternateRandomShot(gamestate)
-
+    #
+    # else:
+    #     x = lastShot['X']
+    #     y = lastShot['Y']
+    #
+    #     if(x + 2 < size):
+    #         x += 2
+    #     else:
+    #         x = 0
+    #         y ++
+    #
+    #     if(y >= size):
+    #         AlternateRandomShot(gamestate)
+    #
 
     targets = []
     for cell in cells:
@@ -69,6 +65,9 @@ def fire_shot(gamestate):
             valid_cell = cell['X'], cell['Y']
             targets.append(valid_cell)
     target = choice(targets)
+    lastShot = {"Kembali":(2,3),"Sekarang":(1,3),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0}
+    with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
+	       json.dump(lastShot,f_out)
     output_shot(*target)
     return
 
