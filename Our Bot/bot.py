@@ -31,9 +31,6 @@ def output_shot(x, y):
         f_out.write('\n')
     pass
 
-def isMentok(x, y):
-    if ()
-
 
 def fire_shot(gamestate):
     # To send through a command please pass through the following <code>,<x>,<y>
@@ -63,15 +60,16 @@ def fire_shot(gamestate):
     #         AlternateRandomShot(gamestate)
     #
 
-    targets = []
-    for cell in cells:
-        if not cell['Damaged'] and not cell['Missed']:
-            valid_cell = cell['X'], cell['Y']
-            targets.append(valid_cell)
-    target = choice(targets)
-    lastShot = {"Kembali":(2,3),"Sekarang":(1,3),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0}
-    with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
-	       json.dump(lastShot,f_out)
+    # targets = []
+    # for cell in cells:
+    #     if not cell['Damaged'] and not cell['Missed']:
+    #         valid_cell = cell['X'], cell['Y']
+    #         targets.append(valid_cell)
+    # target = choice(targets)
+    if os.path.exists(os.path.join(output_path, "..\..\data.txt")) == False:
+        lastShot = {"Kembali":(2,3),"Sekarang":(1,3),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0}
+        with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
+    	       json.dump(lastShot,f_out)
     output_shot(*target)
     return
 
