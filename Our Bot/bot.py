@@ -3,7 +3,6 @@ import json
 import os
 import copy
 from random import choice
-from operator import itemgetter, attrgetter, methodcaller
 
 command_file = "command.txt"
 place_ship_file = "place.txt"
@@ -11,13 +10,15 @@ game_state_file = "state.json"
 output_path = '.'
 map_size = 0
 
-
 def main(player_key):
     global map_size
+
     # Retrieve current game state
     with open(os.path.join(output_path, game_state_file), 'r') as f_in:
         state = json.load(f_in)
+
     map_size = state['MapDimension']
+
     if state['Phase'] == 1:
         place_ships()
     else:
@@ -25,6 +26,7 @@ def main(player_key):
 
 # Output the shot to external file
 def output_shot(x, y):
+
     move = 1
     with open(os.path.join(output_path, command_file), 'w') as f_out:
         f_out.write('{},{},{}'.format(move, x, y))
@@ -41,6 +43,7 @@ def fire_shot(gamestate):
 
     # Check if the file is exist(for initial purposes)
     if (os.path.exists(os.path.join(output_path, "..\..\data.txt")) == False):
+
         # Dummy variable
         lastShot = {"Track":(-1,-1),"Attack":(-1,-1),"kiri":0,"kanan":0,"atas":0,"bawah":0,"fase":1,"jumlahhancur":0,"default":1}
         with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
@@ -163,7 +166,7 @@ def fire_shot(gamestate):
 
                 elif (not bKanan):
                     bKanan = 1
-                    
+
                 x2 = int(cellTrack['X'])
                 y2 = int(cellTrack['Y'])
 
@@ -232,6 +235,7 @@ def randomShot(gamestate):
 
 # Function to place the ship in phase 1
 def place_ships():
+    
 # S : Submarine (3), Singleshot (1), SeekerMissle (36)
 # B : Battleship (4), Singleshot (1), DiagonalCrossShot (36)
 # C : Carrier (5), Singleshot (1), CornerShot (30)
@@ -260,6 +264,7 @@ def place_ships():
              'Submarine 5 10 north'#
              ]
 
+    # Write the ship's placement
     with open(os.path.join(output_path, place_ship_file), 'w') as f_out:
         for ship in ships:
             f_out.write(ship)
