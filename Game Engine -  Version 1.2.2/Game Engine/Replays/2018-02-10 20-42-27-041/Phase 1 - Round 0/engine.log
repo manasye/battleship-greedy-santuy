@@ -1,0 +1,12 @@
+
+10-02-2018 20:42:27:298 - I: 	Loaded bot ..\Reference Bots\Python3
+10-02-2018 20:42:27:307 - I: 	Loaded bot ..\..\Our Bot
+10-02-2018 20:42:27:307 - I: 	Registered player py3Bot
+10-02-2018 20:42:27:308 - I: 	Registered player Stima Santuy
+10-02-2018 20:42:27:366 - I: 		OK!
+10-02-2018 20:42:32:312 - I: 	Added Command PlaceShipCommand for Player py3Bot
+10-02-2018 20:42:33:067 - I: 	Added Command PlaceShipCommand for Player Stima Santuy
+10-02-2018 20:42:33:083 - D: 	Beginning round processing
+10-02-2018 20:42:33:094 - D: 	Processing Player Commands
+10-02-2018 20:42:33:164 - D: 	Killing off players who have no ships left
+10-02-2018 20:42:33:164 - D: 	Round processing complete

@@ -21,7 +21,7 @@ namespace ReferenceBot.Strategy
         {
             return RandomShotCommand(gameState);
         }
-        
+
         private Command RandomShotCommand(GameState gameState)
         {
             var cells = gameState.OpponentMap.Cells;
@@ -32,7 +32,7 @@ namespace ReferenceBot.Strategy
                 return new Command(Code.FireShot, 0, 0);
             }
 
-            
+
             var x = lastShot.X;
             var y = lastShot.Y;
 

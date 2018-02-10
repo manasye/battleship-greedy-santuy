@@ -9,6 +9,7 @@ place_ship_file = "place.txt"
 game_state_file = "state.json"
 output_path = '.'
 map_size = 0
+typeOfWeapon = 1
 
 def main(player_key):
     global map_size
@@ -27,9 +28,9 @@ def main(player_key):
 # Output the shot to external file
 def output_shot(x, y):
 
-    move = 1
+    global typeOfWeapon
     with open(os.path.join(output_path, command_file), 'w') as f_out:
-        f_out.write('{},{},{}'.format(move, x, y))
+        f_out.write('{},{},{}'.format(typeOfWeapon, x, y))
         f_out.write('\n')
     pass
 
@@ -195,6 +196,15 @@ def fire_shot(gamestate):
             elif (not bBawah):
                 y2 -= 1
 
+    shipsOwned = gamestate['PlayerMap']['Owner']['Ships']
+    shipsAvail = checkShips(shipsOwned,'Battleship')
+
+    if(shipsAvail == True):
+        energy = energyRequired(shipsOwned,'Battleship')
+        if(currEnergy >= energy):
+            global typeOfWeapon
+            typeOfWeapon = 5
+
     # Shot the target
     target = (x2,y2)
     lastShot = {"Track":(x1,y1),"Attack":(x2,y2),"kiri":bKiri,"kanan":bKanan,"atas":bAtas,"bawah":bBawah,"fase":phase,"jumlahhancur":cDes,"default":bDefault}
@@ -221,6 +231,24 @@ def hitung_hancur(gamestate):
             count += 1
 
     return count
+
+# Function to check whether certain ship is available
+def checkShips(ships,type):
+
+    avail = False
+    for ship in ships:
+        if(ship['ShipType'] == type and ship['Destroyed'] == False):
+            avail = True
+
+    return avail
+
+# Function to calculate special weapon energy of certain ships
+def energyRequired(ships,type):
+
+    for ship in ships:
+        if(ship['ShipType'] == type):
+            energy = ship['Weapons'][1]['EnergyRequired']
+    return energy
 
 # Function to do random shooting after the greedy part
 def randomShot(gamestate):

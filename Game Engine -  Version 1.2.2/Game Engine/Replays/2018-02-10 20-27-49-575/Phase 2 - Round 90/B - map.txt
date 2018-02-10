@@ -1,0 +1,48 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 90
+Map Dimensions : 10 x 10
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+########## Player
+~~~~~~~~~~
+~~~~~bbBb~
+~sss~~~~~~
+~~~~~~~~~~
+~~~~~~~~c~
+~~~~~~~~c~
+~~r~~~~~c~
+~~r~~d~~c~
+~~r~~d~~c~
+~~~~~~~~~~
+########## Opponent
+~!~!~~~~~!
+!**~!~~~!~
+~!!!~~~!~~
+~!~!~~!~~~
+~~~!!!~~~~
+~!!~*!~~~~
+~*~!*~!~~~
+~*!~*~~!~~
+!*!~~~~~!!
+!*~~~~~~~~
+##########
+
+---------------------------
+Player Name: Stima Santuy
+Available Energy: 89
+Shots: 89
+Hit: 9
+Points: 150
+Arsenal: [SingleShot,DiagonalCrossShot]
+Ships: [Battle Ship]
+Status: Alive
+Shield: (Status: Deactivated, Charges: 12), Center Point: No Shield
+---------------------------
+Opponent: py3Bot
+Points: 280
+Ships: [Submarine,Destroyer,Carrier]
+Status: Alive
+---------------------------
