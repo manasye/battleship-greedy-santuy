@@ -23,19 +23,16 @@ def main(player_key):
     else:
         fire_shot(state)
 
-
+# Output the shot to external file
 def output_shot(x, y):
-    move = 1  # 1=fire shot command code
+    move = 1
     with open(os.path.join(output_path, command_file), 'w') as f_out:
         f_out.write('{},{},{}'.format(move, x, y))
         f_out.write('\n')
     pass
 
-
+# The shot mechanism function
 def fire_shot(gamestate):
-    # To send through a command please pass through the following <code>,<x>,<y>
-    # Possible codes: 1 - Fireshot, 0 - Do Nothing (please pass through coordinates if
-    #  code 1 is your choice)
 
     # Game selector
     cells = gamestate['OpponentMap']['Cells']
@@ -64,7 +61,7 @@ def fire_shot(gamestate):
     cDes = data["jumlahhancur"]
     bDefault = data["default"]
 
-    # The initial time(skip the dummy variable)
+    # The initial round(skip the dummy variable)
     if (x1 == -1 and y1 == -1):
         x1 += 1
         y1 += 1
@@ -79,12 +76,6 @@ def fire_shot(gamestate):
 
             if (cell['X'] == x2 and cell['Y'] == y2):
                 cellAttack = cell
-
-
-        # if (not cellTrack['Damaged'] and not cellAttack['Damaged']):
-        #     target = cellTrack['X'], cellTrack['Y']
-        # else:
-        #     if (cellTrack['Damaged']):
 
         # If hit,do the greedy to search the ship until number of opponent's map destroyed changed
         if(cellTrack['Damaged']):
@@ -109,90 +100,101 @@ def fire_shot(gamestate):
         if(bDefault):
             x2 = x1
             y2 = y1
+
             if(phase == 1):
                 x1 += 1
                 x2 += 1
                 y1 += 1
                 y2 += 1
+
                 if(x1 >= map_size):
                     phase = 2
                     x1 = map_size - 1
                     x2 = map_size - 1
                     y1 = 0
                     y2 = 0
+
             elif(phase == 2):
                 x1 -= 1
                 x2 -= 1
                 y1 += 1
                 y2 += 1
+
                 if(y1 >= map_size):
                     phase = 3
                     x1 = int(map_size/2)
                     x2 = int(map_size/2)
                     y1 = 0
                     y2 = 0
+
             elif(phase == 3):
                 y1 += 1
                 y2 += 1
+
                 if(y1 >= map_size):
                     phase = 4
                     y1 = int(map_size/2)
                     y2 = int(map_size/2)
                     x1 = 0
                     x2 = 0
+
             elif(phase == 4):
                 x1 += 1
                 x2 += 1
+
                 if(x1 >= map_size):
                     phase = 5
+
             else:
                 (x1,y1) = randomShot(gamestate)
                 x2 = x1
                 y2 = y1
 
         else:
-            #The ship not yet destroyed
-            #Set whether the direction is wrong
+            # The ship not yet destroyed
+            # Set whether the direction is wrong
             if (cellAttack['Missed']):
+
                 if (not bKiri):
                     bKiri = 1
+
                 elif (not bAtas):
                     bAtas = 1
+
                 elif (not bKanan):
                     bKanan = 1
+                    
                 x2 = int(cellTrack['X'])
                 y2 = int(cellTrack['Y'])
 
-            #If the bot detects the placement of the attacked ship, it will only attack in a certain direction.
-            if (cellAttack['Damaged'] and cellAttack['X'] != cellTrack['X'] and cellAttack['Y'] != cellTrack['Y']):
+            # If the bot detects the placement of the attacked ship, it will only attack in a certain direction.
+            if (cellAttack['Damaged'] and (cellAttack['X'] != cellTrack['X']) and (cellAttack['Y'] != cellTrack['Y'])):
+
                 if (not bKiri):
                     bAtas = 1
+
                 elif (not bAtas):
                     bKanan = 1
 
-            #Conditional branch.
+            # Conditional branch.
             if (not bKiri):
                 x2 -= 1
+
             elif (not bAtas):
                 y2 += 1
+
             elif (not bKanan):
                 x2 += 1
+
             elif (not bBawah):
                 y2 -= 1
 
-
+    # Shot the target
     target = (x2,y2)
     lastShot = {"Track":(x1,y1),"Attack":(x2,y2),"kiri":bKiri,"kanan":bKanan,"atas":bAtas,"bawah":bBawah,"fase":phase,"jumlahhancur":cDes,"default":bDefault}
     with open(os.path.join(output_path, "..\..\data.txt"), 'w') as f_out:
         json.dump(lastShot,f_out)
     output_shot(*target)
-
-    # targets = []
-    # for cell in cells:
-    #     if not cell['Damaged'] and not cell['Missed']:
-    #         valid_cell = cell['X'], cell['Y']
-    #         targets.append(valid_cell)
-    # target = choice(targets)
 
     # targets = []
     # for cell in cells:
@@ -222,7 +224,7 @@ def randomShot(gamestate):
     targets = []
     for cell in cells:
         if not cell['Damaged'] and not cell['Missed']:
-            valid_cell = cell['X'], cell['Y']
+            valid_cell = (int(cell['X']), int(cell['Y']))
             targets.append(valid_cell)
     target = choice(targets)
 
@@ -230,11 +232,10 @@ def randomShot(gamestate):
 
 # Function to place the ship in phase 1
 def place_ships():
-
 # S : Submarine (3), Singleshot (1), SeekerMissle (36)
-# B : Battleship (4), Singleshot (1), DiagonalCrossShot (36) x
-# C : Carrier (5), Singleshot (1), CornerShot (30) pojok doang
-# R : Cruser (3), Singleshot (1), CrossShot (42) +
+# B : Battleship (4), Singleshot (1), DiagonalCrossShot (36)
+# C : Carrier (5), Singleshot (1), CornerShot (30)
+# R : Cruser (3), Singleshot (1), CrossShot (42)
 # D : Destroyer (2), Singleshot (1), DoubleShot (24)
 
     if (map_size == 7):

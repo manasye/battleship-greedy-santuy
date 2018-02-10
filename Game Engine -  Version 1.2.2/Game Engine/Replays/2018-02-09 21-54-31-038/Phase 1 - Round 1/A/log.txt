@@ -1,8 +1,0 @@
-
-09-02-2018 21:55:07:126 - I: 	The first round has failed due to a bot's ships not all being placed
-09-02-2018 21:55:08:168 - D: 	Executing bot with following commands python.exe "bot.py" A "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 21-54-31-038\Phase 1 - Round 1\A"
-09-02-2018 21:55:08:168 - I: 	Executing process python.exe "bot.py" A "F:\Adam\ITB\Semester 4\IF2211 - Strategi Algoritma\Tubes\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-09 21-54-31-038\Phase 1 - Round 1\A"
-09-02-2018 21:55:08:190 - I: 	Bot has 4000ms to run before it will be forcefully killed
-09-02-2018 21:55:08:396 - E: 	Output from bot: 
-09-02-2018 21:55:08:396 - I: 	Output from bot: 
-09-02-2018 21:55:08:400 - I: 	Your bots total execution time was 00:00:00.2305250
