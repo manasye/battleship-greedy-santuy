@@ -1,8 +1,0 @@
-
-10-02-2018 20:44:36:802 - I: 	Added Command FireSingleShotCommand for Player py3Bot
-10-02-2018 20:44:36:986 - I: 	Added Command FireCrossShotCommand for Player Stima Santuy
-10-02-2018 20:44:36:987 - D: 	Beginning round processing
-10-02-2018 20:44:36:988 - D: 	Processing Player Commands
-10-02-2018 20:44:36:989 - D: 	Killing off players who have no ships left
-10-02-2018 20:44:36:990 - D: 	Killed player py3Bot
-10-02-2018 20:44:36:990 - D: 	Round processing complete

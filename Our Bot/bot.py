@@ -74,14 +74,9 @@ def fire_shot(gamestate):
 
     else:
         # Search the cell
-        for cell in cells:
-            if (cell['X'] == x1 and cell['Y'] == y1):
-                cellTrack = cell
+        (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
 
-            if (cell['X'] == x2 and cell['Y'] == y2):
-                cellAttack = cell
-
-        # If hit,do the greedy to search the ship until number of opponent's map destroyed changed
+        # If hit, do the greedy to search the ship until number of opponent's map destroyed changed
         if(cellTrack['Damaged']):
             bDefault = 0
 
@@ -111,6 +106,18 @@ def fire_shot(gamestate):
                 y1 += 1
                 y2 += 1
 
+                if(x1 < map_size):
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                    while(cellTrack['Damaged'] or cellTrack['Missed']):
+                        x1 += 1
+                        x2 += 1
+                        y1 += 1
+                        y2 += 1
+                        if (x1 >= map_size):
+                            break
+                        else:
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
                 if(x1 >= map_size):
                     phase = 2
                     x1 = map_size - 1
@@ -124,30 +131,120 @@ def fire_shot(gamestate):
                 y1 += 1
                 y2 += 1
 
+                if(y1 < map_size):
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                    while(cellTrack['Damaged'] or cellTrack['Missed']):
+                        x1 -= 1
+                        x2 -= 1
+                        y1 += 1
+                        y2 += 1
+                        if (y1 >= map_size):
+                            break
+                        else:
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
                 if(y1 >= map_size):
                     phase = 3
+                    x1 = 0
+                    x2 = 0
+                    y1 = int(map_size/2)
+                    y2 = int(map_size/2)
+
+            elif(phase == 3):
+                x1 += 1
+                x2 += 1
+                y1 += 1
+                y2 += 1
+
+                if(y1 < map_size):
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                    while(cellTrack['Damaged'] or cellTrack['Missed']):
+                        x1 += 1
+                        x2 += 1
+                        y1 += 1
+                        y2 += 1
+                        if (y1 >= map_size):
+                            break
+                        else:
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                if(y1 >= map_size):
+                    phase = 4
+                    y1 = map_size - 1
+                    y2 = map_size - 1
+                    x1 = int(map_size/2)
+                    x2 = int(map_size/2)
+
+            elif(phase == 4):
+                y1 -= 1
+                y2 -= 1
+                x1 += 1
+                x2 += 1
+
+                if(x1 < map_size):
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                    while(cellTrack['Damaged'] or cellTrack['Missed']):
+                        x1 += 1
+                        x2 += 1
+                        y1 -= 1
+                        y2 -= 1
+                        if (x1 >= map_size):
+                            break
+                        else:
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                if(x1 >= map_size):
+                    phase = 5
                     x1 = int(map_size/2)
                     x2 = int(map_size/2)
                     y1 = 0
                     y2 = 0
 
-            elif(phase == 3):
+            elif(phase == 5):
+                x1 += 1
+                x2 += 1
                 y1 += 1
                 y2 += 1
 
-                if(y1 >= map_size):
-                    phase = 4
-                    y1 = int(map_size/2)
-                    y2 = int(map_size/2)
-                    x1 = 0
-                    x2 = 0
-
-            elif(phase == 4):
-                x1 += 1
-                x2 += 1
+                if(x1 < map_size):
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                    while(cellTrack['Damaged'] or cellTrack['Missed']):
+                        x1 += 1
+                        x2 += 1
+                        y1 += 1
+                        y2 += 1
+                        if (x1 >= map_size):
+                            break
+                        else:
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
 
                 if(x1 >= map_size):
-                    phase = 5
+                    phase = 6
+                    x1 = int(map_size/2)
+                    x2 = int(map_size/2)
+                    y1 = 0
+                    y1 = 0
+
+            elif(phase == 6):
+                x1 -= 1
+                x2 -= 1
+                y1 += 1
+                y2 += 1
+
+                if(x1 >= 0):
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                    while(cellTrack['Damaged'] or cellTrack['Missed']):
+                        x1 -= 1
+                        x2 -= 1
+                        y1 += 1
+                        y2 += 1
+                        if (x1 < 0):
+                            break
+                        else:
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                if(x1 < 0):
+                    phase = 7
                     (x1,y1) = randomShot(gamestate)
                     x2 = x1
                     y2 = y1
@@ -203,37 +300,35 @@ def fire_shot(gamestate):
     destroyerAvail = checkShips(shipsOwned,'Destroyer')
     submarineAvail = checkShips(shipsOwned,'Submarine')
 
+    global typeOfWeapon
     if(battleshipAvail == True):
         energyBattleship = energyRequired(shipsOwned,'Battleship')
         if(currEnergy >= energyBattleship):
-            global typeOfWeapon
             typeOfWeapon = 5
 
-    if(carrierAvail == True):
+    elif(carrierAvail == True):
         energyCarrier = energyRequired(shipsOwned,'Carrier')
         if(currEnergy >= energyCarrier):
-            global typeOfWeapon
-            typeOfWeapon = 5
+            typeOfWeapon = 4
 
-    if(cruiserAvail == True):
+    elif(cruiserAvail == True):
         energyCruiser = energyRequired(shipsOwned,'Cruiser')
         if(currEnergy >= energyCruiser):
-            global typeOfWeapon
-            typeOfWeapon = 5
+            typeOfWeapon = 6
 
-    if(destroyerAvail == True):
+    elif(destroyerAvail == True):
         energyDestroyer = energyRequired(shipsOwned,'Destroyer')
         if(currEnergy >= energyDestroyer):
-            global typeOfWeapon
-            typeOfWeapon = 5
+            typeOfWeapon = 2
 
-    if(submarineAvail == True):
+    elif(submarineAvail == True):
         energySubmarine = energyRequired(shipsOwned,'Submarine')
         if(currEnergy >= energySubmarine):
-            global typeOfWeapon
-            typeOfWeapon = 5
+            typeOfWeapon = 7
 
-    
+    else:
+        typeOfWeapon = 1
+
     # Shot the target
     target = (x2,y2)
     lastShot = {"Track":(x1,y1),"Attack":(x2,y2),"kiri":bKiri,"kanan":bKanan,"atas":bAtas,"bawah":bBawah,"fase":phase,"jumlahhancur":cDes,"default":bDefault}
@@ -241,15 +336,18 @@ def fire_shot(gamestate):
         json.dump(lastShot,f_out)
     output_shot(*target)
 
-    # targets = []
-    # for cell in cells:
-    #     if not cell['Damaged'] and not cell['Missed']:
-    #         valid_cell = cell['X'], cell['Y']
-    #         targets.append(valid_cell)
-    # target = choice(targets)
-    # output_shot(*target)
-
     return
+
+# Function to search cell with given x,y
+def searchCell (cells,x1,y1,x2,y2):
+    for cell in cells:
+        if (cell['X'] == x1 and cell['Y'] == y1):
+            cellTrack = cell
+
+        if (cell['X'] == x2 and cell['Y'] == y2):
+            cellAttack = cell
+
+    return (cellTrack,cellAttack)
 
 # Function to calculate destroyed opponent's ship
 def hitung_hancur(gamestate):
@@ -296,7 +394,7 @@ def randomShot(gamestate):
 # Function to place the ship in phase 1
 def place_ships():
 
-# S : Submarine (3), Singleshot (1), SeekerMissle (36)
+# S : Submarine (3), Singleshot (1), SeekerMissile (36)
 # B : Battleship (4), Singleshot (1), DiagonalCrossShot (36)
 # C : Carrier (5), Singleshot (1), CornerShot (30)
 # R : Cruser (3), Singleshot (1), CrossShot (42)

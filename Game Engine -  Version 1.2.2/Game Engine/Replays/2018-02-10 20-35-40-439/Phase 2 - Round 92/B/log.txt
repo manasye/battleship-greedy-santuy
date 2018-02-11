@@ -1,8 +1,0 @@
-
-10-02-2018 20:37:15:276 - I: 	Player Command GameEngine.Commands.PlayerCommands.FireDoubleShotCommand failed because Stima Santuy's Battleship has been destroyed and cannot use this shot
-10-02-2018 20:37:15:947 - D: 	Executing bot with following commands python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-10 20-35-40-439\Phase 2 - Round 92\B"
-10-02-2018 20:37:15:947 - I: 	Executing process python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-10 20-35-40-439\Phase 2 - Round 92\B"
-10-02-2018 20:37:15:955 - I: 	Bot has 4000ms to run before it will be forcefully killed
-10-02-2018 20:37:16:086 - E: 	Output from bot: 
-10-02-2018 20:37:16:086 - I: 	Output from bot: 
-10-02-2018 20:37:16:089 - I: 	Your bots total execution time was 00:00:00.1420345
