@@ -197,14 +197,43 @@ def fire_shot(gamestate):
                 y2 -= 1
 
     shipsOwned = gamestate['PlayerMap']['Owner']['Ships']
-    shipsAvail = checkShips(shipsOwned,'Battleship')
+    battleshipAvail = checkShips(shipsOwned,'Battleship')
+    carrierAvail = checkShips(shipsOwned,'Carrier')
+    cruiserAvail = checkShips(shipsOwned,'Cruiser')
+    destroyerAvail = checkShips(shipsOwned,'Destroyer')
+    submarineAvail = checkShips(shipsOwned,'Submarine')
 
-    if(shipsAvail == True):
-        energy = energyRequired(shipsOwned,'Battleship')
-        if(currEnergy >= energy):
+    if(battleshipAvail == True):
+        energyBattleship = energyRequired(shipsOwned,'Battleship')
+        if(currEnergy >= energyBattleship):
             global typeOfWeapon
             typeOfWeapon = 5
 
+    if(carrierAvail == True):
+        energyCarrier = energyRequired(shipsOwned,'Carrier')
+        if(currEnergy >= energyCarrier):
+            global typeOfWeapon
+            typeOfWeapon = 5
+
+    if(cruiserAvail == True):
+        energyCruiser = energyRequired(shipsOwned,'Cruiser')
+        if(currEnergy >= energyCruiser):
+            global typeOfWeapon
+            typeOfWeapon = 5
+
+    if(destroyerAvail == True):
+        energyDestroyer = energyRequired(shipsOwned,'Destroyer')
+        if(currEnergy >= energyDestroyer):
+            global typeOfWeapon
+            typeOfWeapon = 5
+
+    if(submarineAvail == True):
+        energySubmarine = energyRequired(shipsOwned,'Submarine')
+        if(currEnergy >= energySubmarine):
+            global typeOfWeapon
+            typeOfWeapon = 5
+
+    
     # Shot the target
     target = (x2,y2)
     lastShot = {"Track":(x1,y1),"Attack":(x2,y2),"kiri":bKiri,"kanan":bKanan,"atas":bAtas,"bawah":bBawah,"fase":phase,"jumlahhancur":cDes,"default":bDefault}
