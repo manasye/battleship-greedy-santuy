@@ -50,7 +50,7 @@ def place_ships():
     # Directions: north east south west
 
     ships = ['Battleship 1 0 north',
-             'Carrier 3 1 East',
+             'Carrier 0 9 East',
              'Cruiser 4 2 north',
              'Destroyer 7 3 north',
              'Submarine 1 8 East'

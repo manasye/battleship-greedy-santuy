@@ -280,6 +280,17 @@ def fire_shot(gamestate):
                 elif (not bAtas):
                     bKanan = 1
 
+            # Check if the pointer already on the edge
+            if (x2 - 1 < 0 and not bKiri):
+                bKiri = 1
+                x2 = int(cellTrack['X'])
+                y2 = int(cellTrack['Y'])
+
+            if (y2 + 1 == map_size and not bAtas):
+                bAtas = 1
+                x2 = int(cellTrack['X'])
+                y2 = int(cellTrack['Y'])
+
             # Conditional branch.
             if (not bKiri):
                 x2 -= 1

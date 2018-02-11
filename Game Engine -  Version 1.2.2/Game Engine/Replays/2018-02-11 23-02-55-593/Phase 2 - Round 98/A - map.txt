@@ -1,0 +1,48 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 98
+Map Dimensions : 10 x 10
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+########## Player
+cccCC~~~~~
+~sss~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~~~~~~~
+~~~~r~~D~~
+~b~~r~~D~~
+~b~~r~~~~~
+~b~~~~~~~~
+~b~~~~~~~~
+########## Opponent
+!!!!!!!!!!
+!!!!!****!
+!***!!!!!!
+!!!!!!!!!!
+!!!!!!!!*!
+!!!!!!!!*!
+!!*!!!!~*!
+!!*!!*!!*!
+!!*!!*!!~!
+!!!!!!!~!!
+##########
+
+---------------------------
+Player Name: py3Bot
+Available Energy: 197
+Shots: 97
+Hit: 16
+Points: 280
+Arsenal: [SingleShot,DoubleShot,CornerShot]
+Ships: [Destroyer,Carrier]
+Status: Alive
+Shield: (Status: Deactivated, Charges: 13), Center Point: No Shield
+---------------------------
+Opponent: Stima Santuy
+Points: 220
+Ships: [Carrier]
+Status: Alive
+---------------------------
