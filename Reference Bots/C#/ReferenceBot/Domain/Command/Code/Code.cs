@@ -11,5 +11,6 @@
         CrossShotHorizontal = 6,
         SeekerMissile = 7,
         Shield = 8
+        // + , double, seeker, corner (bukan penjuru angin), sisanya
     }
 }

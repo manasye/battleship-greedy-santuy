@@ -301,33 +301,65 @@ def fire_shot(gamestate):
     submarineAvail = checkShips(shipsOwned,'Submarine')
 
     global typeOfWeapon
-    if(battleshipAvail == True):
-        energyBattleship = energyRequired(shipsOwned,'Battleship')
-        if(currEnergy >= energyBattleship):
-            typeOfWeapon = 5
 
-    elif(carrierAvail == True):
-        energyCarrier = energyRequired(shipsOwned,'Carrier')
-        if(currEnergy >= energyCarrier):
-            typeOfWeapon = 4
+    if phase != 7:
+        if(cruiserAvail == True):
+            energyCruiser = energyRequired(shipsOwned,'Cruiser')
+            if(currEnergy >= energyCruiser):
+                typeOfWeapon = 6
 
-    elif(cruiserAvail == True):
-        energyCruiser = energyRequired(shipsOwned,'Cruiser')
-        if(currEnergy >= energyCruiser):
-            typeOfWeapon = 6
+        elif(destroyerAvail == True):
+            energyDestroyer = energyRequired(shipsOwned,'Destroyer')
+            if(currEnergy >= energyDestroyer):
+                typeOfWeapon = 3
 
-    elif(destroyerAvail == True):
-        energyDestroyer = energyRequired(shipsOwned,'Destroyer')
-        if(currEnergy >= energyDestroyer):
-            typeOfWeapon = 2
+        elif(submarineAvail == True):
+            energySubmarine = energyRequired(shipsOwned,'Submarine')
+            if(currEnergy >= energySubmarine):
+                typeOfWeapon = 7
 
-    elif(submarineAvail == True):
-        energySubmarine = energyRequired(shipsOwned,'Submarine')
-        if(currEnergy >= energySubmarine):
-            typeOfWeapon = 7
+        elif(carrierAvail == True):
+            energyCarrier = energyRequired(shipsOwned,'Carrier')
+            if(currEnergy >= energyCarrier):
+                typeOfWeapon = 4
+
+        elif(battleshipAvail == True):
+            energyBattleship = energyRequired(shipsOwned,'Battleship')
+            if(currEnergy >= energyBattleship):
+                typeOfWeapon = 5
+
+        else:
+            typeOfWeapon = 1
 
     else:
-        typeOfWeapon = 1
+        if(destroyerAvail == True):
+            energyDestroyer = energyRequired(shipsOwned,'Destroyer')
+            if(currEnergy >= energyDestroyer):
+                typeOfWeapon = 3
+
+        elif(submarineAvail == True):
+            energySubmarine = energyRequired(shipsOwned,'Submarine')
+            if(currEnergy >= energySubmarine):
+                typeOfWeapon = 7
+
+        elif(carrierAvail == True):
+            energyCarrier = energyRequired(shipsOwned,'Carrier')
+            if(currEnergy >= energyCarrier):
+                typeOfWeapon = 4
+
+        elif(battleshipAvail == True):
+            energyBattleship = energyRequired(shipsOwned,'Battleship')
+            if(currEnergy >= energyBattleship):
+                typeOfWeapon = 5
+
+        elif(cruiserAvail == True):
+            energyCruiser = energyRequired(shipsOwned,'Cruiser')
+            if(currEnergy >= energyCruiser):
+                typeOfWeapon = 6
+
+        else:
+            typeOfWeapon = 1
+
 
     # Shot the target
     target = (x2,y2)
