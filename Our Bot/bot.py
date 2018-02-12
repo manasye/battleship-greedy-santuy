@@ -74,31 +74,31 @@ def fire_shot(gamestate):
         y1 += 1
         x2 += 1
         y2 += 1
+    #
+    # # Deploying shield while in max radius
+    # if(map_size == 7):
+    #     if(shieldCharge == 1):
+    #         typeOfWeapon = 8
+    #         output_shot(1,5)
+    #         return
+    #
+    # if(map_size == 10):
+    #     if(shieldCharge == 2):
+    #         typeOfWeapon = 8
+    #         output_shot(7,6)
+    #         return
+    #
+    # if(map_size == 14):
+    #     if(shieldCharge == 3):
+    #         typeOfWeapon = 8
+    #         output_shot(5,10)
+    #         return
 
-    # Deploying shield while in max radius
-    if(map_size == 7):
-        if(shieldCharge == 1):
-            typeOfWeapon = 8
-            output_shot(1,5)
-            return
-
-    if(map_size == 10):
-        if(shieldCharge == 2):
-            typeOfWeapon = 8
-            output_shot(7,6)
-            return
-
-    if(map_size == 14):
-        if(shieldCharge == 3):
-            typeOfWeapon = 8
-            output_shot(5,10)
-            return
-
-    elif(x1 >= 0 and x2 >= 0):
+    elif(x1 >= 0 and y2 >= 0):
         # Search the cell
         (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
 
-        if(not cellTrack['ShieldHit']):
+        if(not cellAttack['ShieldHit']):
             # If hit, do the greedy to search the ship until number of opponent's map destroyed changed
             if(cellTrack['Damaged']):
                 bDefault = 0

@@ -1,0 +1,1 @@
+{"Track": [6, 3], "Attack": [5, 3], "kiri": 0, "kanan": 1, "atas": 0, "bawah": 0, "fase": 4, "jumlahhancur": 4, "default": 0}
