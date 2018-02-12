@@ -1,0 +1,7 @@
+
+12-02-2018 22:55:10:938 - D: 	Executing bot with following commands python.exe "bot.py" A "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-12 22-54-15-792\Phase 2 - Round 41\A"
+12-02-2018 22:55:10:938 - I: 	Executing process python.exe "bot.py" A "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-12 22-54-15-792\Phase 2 - Round 41\A"
+12-02-2018 22:55:10:954 - I: 	Bot has 4000ms to run before it will be forcefully killed
+12-02-2018 22:55:11:063 - E: 	Output from bot: 
+12-02-2018 22:55:11:063 - I: 	Output from bot: 
+12-02-2018 22:55:11:063 - I: 	Your bots total execution time was 00:00:00.1180589

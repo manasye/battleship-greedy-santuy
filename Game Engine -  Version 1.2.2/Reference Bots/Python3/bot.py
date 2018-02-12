@@ -49,11 +49,11 @@ def place_ships():
     # Ship names: Battleship, Cruiser, Carrier, Destroyer, Submarine
     # Directions: north east south west
 
-    ships = ['Battleship 1 0 north',
-             'Carrier 0 9 East',
-             'Cruiser 4 2 north',
-             'Destroyer 7 3 north',
-             'Submarine 1 8 East'
+    ships = ['Battleship 3 1 East',
+             'Carrier 2 6 East',
+             'Cruiser 0 3 north',
+             'Destroyer 5 3 East',
+             'Submarine 2 2 north'
              ]
 
     with open(os.path.join(output_path, place_ship_file), 'w') as f_out:

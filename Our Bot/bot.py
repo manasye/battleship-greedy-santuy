@@ -37,10 +37,13 @@ def output_shot(x, y):
 # The shot mechanism function
 def fire_shot(gamestate):
 
+    global typeOfWeapon
+
     # Game selector
     cells = gamestate['OpponentMap']['Cells']
     currEnergy = gamestate['PlayerMap']['Owner']['Energy']
     size = gamestate['MapDimension']
+    shieldCharge = gamestate['PlayerMap']['Owner']['Shield']['CurrentCharges']
 
     # Check if the file is exist(for initial purposes)
     if (os.path.exists(os.path.join(output_path, "..\..\data.txt")) == False):
@@ -72,237 +75,271 @@ def fire_shot(gamestate):
         x2 += 1
         y2 += 1
 
-    else:
+    # Deploying shield while in max radius
+    if(map_size == 7):
+        if(shieldCharge == 1):
+            typeOfWeapon = 8
+            output_shot(1,5)
+            return
+
+    if(map_size == 10):
+        if(shieldCharge == 2):
+            typeOfWeapon = 8
+            output_shot(7,6)
+            return
+
+    if(map_size == 14):
+        if(shieldCharge == 3):
+            typeOfWeapon = 8
+            output_shot(5,10)
+            return
+
+    elif(x1 >= 0 and x2 >= 0):
         # Search the cell
         (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
 
-        # If hit, do the greedy to search the ship until number of opponent's map destroyed changed
-        if(cellTrack['Damaged']):
-            bDefault = 0
+        if(not cellTrack['ShieldHit']):
+            # If hit, do the greedy to search the ship until number of opponent's map destroyed changed
+            if(cellTrack['Damaged']):
+                bDefault = 0
 
-        if cDes == hitung_hancur(gamestate):
-                bDefault = 1
-                cDes += 1
-                bKiri = 0
-                bAtas = 0
-                bKanan = 0
-                bBawah = 0
-                x2 = int(cellTrack['X'])
-                y2 = int(cellTrack['Y'])
+            if cDes < hitung_hancur(gamestate):
+                    bDefault = 1
+                    cDes += 1
+                    bKiri = 0
+                    bAtas = 0
+                    bKanan = 0
+                    bBawah = 0
+                    x2 = int(cellTrack['X'])
+                    y2 = int(cellTrack['Y'])
 
-        # If we missed,move based on the Phase
-        # 1: diagonal(northeast)
-        # 2: diagonal(northwest)
-        # 3: vertical
-        # 4: horizontal
-        # 5: random search
-        if(bDefault):
-            x2 = x1
-            y2 = y1
-
-            if(phase == 1):
-                x1 += 1
-                x2 += 1
-                y1 += 1
-                y2 += 1
-
-                if(x1 < map_size):
-                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-                    while(cellTrack['Damaged'] or cellTrack['Missed']):
-                        x1 += 1
-                        x2 += 1
-                        y1 += 1
-                        y2 += 1
-                        if (x1 >= map_size):
-                            break
-                        else:
-                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-
-                if(x1 >= map_size):
-                    phase = 2
-                    x1 = map_size - 1
-                    x2 = map_size - 1
-                    y1 = 0
-                    y2 = 0
-
-            elif(phase == 2):
-                x1 -= 1
-                x2 -= 1
-                y1 += 1
-                y2 += 1
-
-                if(y1 < map_size):
-                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-                    while(cellTrack['Damaged'] or cellTrack['Missed']):
-                        x1 -= 1
-                        x2 -= 1
-                        y1 += 1
-                        y2 += 1
-                        if (y1 >= map_size):
-                            break
-                        else:
-                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-
-                if(y1 >= map_size):
-                    phase = 3
-                    x1 = 0
-                    x2 = 0
-                    y1 = int(map_size/2)
-                    y2 = int(map_size/2)
-
-            elif(phase == 3):
-                x1 += 1
-                x2 += 1
-                y1 += 1
-                y2 += 1
-
-                if(y1 < map_size):
-                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-                    while(cellTrack['Damaged'] or cellTrack['Missed']):
-                        x1 += 1
-                        x2 += 1
-                        y1 += 1
-                        y2 += 1
-                        if (y1 >= map_size):
-                            break
-                        else:
-                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-
-                if(y1 >= map_size):
-                    phase = 4
-                    y1 = map_size - 1
-                    y2 = map_size - 1
-                    x1 = int(map_size/2)
-                    x2 = int(map_size/2)
-
-            elif(phase == 4):
-                y1 -= 1
-                y2 -= 1
-                x1 += 1
-                x2 += 1
-
-                if(x1 < map_size):
-                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-                    while(cellTrack['Damaged'] or cellTrack['Missed']):
-                        x1 += 1
-                        x2 += 1
-                        y1 -= 1
-                        y2 -= 1
-                        if (x1 >= map_size):
-                            break
-                        else:
-                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-
-                if(x1 >= map_size):
-                    phase = 5
-                    x1 = int(map_size/2)
-                    x2 = int(map_size/2)
-                    y1 = 0
-                    y2 = 0
-
-            elif(phase == 5):
-                x1 += 1
-                x2 += 1
-                y1 += 1
-                y2 += 1
-
-                if(x1 < map_size):
-                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-                    while(cellTrack['Damaged'] or cellTrack['Missed']):
-                        x1 += 1
-                        x2 += 1
-                        y1 += 1
-                        y2 += 1
-                        if (x1 >= map_size):
-                            break
-                        else:
-                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-
-                if(x1 >= map_size):
-                    phase = 6
-                    x1 = int(map_size/2)
-                    x2 = int(map_size/2)
-                    y1 = 0
-                    y1 = 0
-
-            elif(phase == 6):
-                x1 -= 1
-                x2 -= 1
-                y1 += 1
-                y2 += 1
-
-                if(x1 >= 0):
-                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-                    while(cellTrack['Damaged'] or cellTrack['Missed']):
-                        x1 -= 1
-                        x2 -= 1
-                        y1 += 1
-                        y2 += 1
-                        if (x1 < 0):
-                            break
-                        else:
-                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
-
-                if(x1 < 0):
-                    phase = 7
-                    (x1,y1) = randomShot(gamestate)
-                    x2 = x1
-                    y2 = y1
-
-            else:
-                (x1,y1) = randomShot(gamestate)
+            # If we missed,move based on the Phase
+            # 1: diagonal(northeast)
+            # 2: diagonal(northwest)
+            # 3: vertical
+            # 4: horizontal
+            # 5: random search
+            if(bDefault):
                 x2 = x1
                 y2 = y1
 
-        else:
-            # The ship not yet destroyed
-            # Set whether the direction is wrong
-            if (cellAttack['Missed']):
+                #Workaround for bug in phase transition
+                while (cellTrack['Damaged'] or cellTrack['Missed']):
+                    if(phase == 1):
+                        x1 += 1
+                        x2 += 1
+                        y1 += 1
+                        y2 += 1
 
-                if (not bKiri):
+                        if(x1 < map_size):
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                            while(cellTrack['Damaged'] or cellTrack['Missed']):
+                                x1 += 1
+                                x2 += 1
+                                y1 += 1
+                                y2 += 1
+                                if (x1 >= map_size):
+                                    break
+                                else:
+                                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                        if(x1 >= map_size):
+                            phase = 2
+                            x1 = map_size - 1
+                            x2 = map_size - 1
+                            y1 = 0
+                            y2 = 0
+
+                    elif(phase == 2):
+                        x1 -= 1
+                        x2 -= 1
+                        y1 += 1
+                        y2 += 1
+
+                        if(y1 < map_size):
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                            while(cellTrack['Damaged'] or cellTrack['Missed']):
+                                x1 -= 1
+                                x2 -= 1
+                                y1 += 1
+                                y2 += 1
+                                if (y1 >= map_size):
+                                    break
+                                else:
+                                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                        if(y1 >= map_size):
+                            phase = 3
+                            x1 = 0
+                            x2 = 0
+                            y1 = int(map_size/2)
+                            y2 = int(map_size/2)
+
+                    elif(phase == 3):
+                        x1 += 1
+                        x2 += 1
+                        y1 += 1
+                        y2 += 1
+
+                        if(y1 < map_size):
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                            while(cellTrack['Damaged'] or cellTrack['Missed']):
+                                x1 += 1
+                                x2 += 1
+                                y1 += 1
+                                y2 += 1
+                                if (y1 >= map_size):
+                                    break
+                                else:
+                                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                        if(y1 >= map_size):
+                            phase = 4
+                            y1 = map_size - 1
+                            y2 = map_size - 1
+                            x1 = int(map_size/2)
+                            x2 = int(map_size/2)
+
+                    elif(phase == 4):
+                        y1 -= 1
+                        y2 -= 1
+                        x1 += 1
+                        x2 += 1
+
+                        if(x1 < map_size):
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                            while(cellTrack['Damaged'] or cellTrack['Missed']):
+                                x1 += 1
+                                x2 += 1
+                                y1 -= 1
+                                y2 -= 1
+                                if (x1 >= map_size):
+                                    break
+                                else:
+                                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                        if(x1 >= map_size):
+                            phase = 5
+                            x1 = int(map_size/2)
+                            x2 = int(map_size/2)
+                            y1 = 0
+                            y2 = 0
+
+                    elif(phase == 5):
+                        x1 += 1
+                        x2 += 1
+                        y1 += 1
+                        y2 += 1
+
+                        if(x1 < map_size):
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                            while(cellTrack['Damaged'] or cellTrack['Missed']):
+                                x1 += 1
+                                x2 += 1
+                                y1 += 1
+                                y2 += 1
+                                if (x1 >= map_size):
+                                    break
+                                else:
+                                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                        if(x1 >= map_size):
+                            phase = 6
+                            x1 = int(map_size/2)
+                            x2 = int(map_size/2)
+                            y1 = 0
+                            y1 = 0
+
+                    elif(phase == 6):
+                        x1 -= 1
+                        x2 -= 1
+                        y1 += 1
+                        y2 += 1
+
+                        if(x1 >= 0):
+                            (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+                            while(cellTrack['Damaged'] or cellTrack['Missed']):
+                                x1 -= 1
+                                x2 -= 1
+                                y1 += 1
+                                y2 += 1
+                                if (x1 < 0):
+                                    break
+                                else:
+                                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+                        if(x1 < 0):
+                            phase = 7
+                            (x1,y1) = randomShot(gamestate)
+                            x2 = x1
+                            y2 = y1
+
+                    else:
+                        (x1,y1) = randomShot(gamestate)
+                        x2 = x1
+                        y2 = y1
+
+                    (cellTrack,cellAttack) = searchCell(cells,x1,y1,x2,y2)
+
+            else:
+                # The ship not yet destroyed
+                # Set whether the direction is wrong
+                if (cellAttack['Missed']):
+
+                    if (not bKiri):
+                        bKiri = 1
+
+                    elif (not bAtas):
+                        bAtas = 1
+
+                    elif (not bKanan):
+                        bKanan = 1
+
+                    x2 = int(cellTrack['X'])
+                    y2 = int(cellTrack['Y'])
+
+                # If the bot detects the placement of the attacked ship, it will only attack in a certain direction.
+                if (cellAttack['Damaged'] and (cellAttack['X'] != cellTrack['X']) and (cellAttack['Y'] != cellTrack['Y'])):
+
+                    if (not bKiri):
+                        bAtas = 1
+
+                    elif (not bAtas):
+                        bKanan = 1
+
+                # Check if the pointer already on the edge
+                if (x2 - 1 < 0 and not bKiri):
                     bKiri = 1
+                    x2 = int(cellTrack['X'])
+                    y2 = int(cellTrack['Y'])
+
+                if (y2 + 1 == map_size and not bAtas):
+                    bAtas = 1
+                    x2 = int(cellTrack['X'])
+                    y2 = int(cellTrack['Y'])
+
+                if (x2 + 1 == map_size and not bKanan):
+                    bKanan = 1
+                    x2 = int(cellTrack['X'])
+                    y2 = int(cellTrack['Y'])
+
+                if (y2 - 1 < 0 and not bBawah):
+                    bBawah = 1
+                    x2 = int(cellTrack['X'])
+                    y2 = int(cellTrack['Y'])
+
+                # Conditional branch.
+                if (not bKiri):
+                    x2 -= 1
 
                 elif (not bAtas):
-                    bAtas = 1
+                    y2 += 1
 
                 elif (not bKanan):
-                    bKanan = 1
+                    x2 += 1
 
-                x2 = int(cellTrack['X'])
-                y2 = int(cellTrack['Y'])
-
-            # If the bot detects the placement of the attacked ship, it will only attack in a certain direction.
-            if (cellAttack['Damaged'] and (cellAttack['X'] != cellTrack['X']) and (cellAttack['Y'] != cellTrack['Y'])):
-
-                if (not bKiri):
-                    bAtas = 1
-
-                elif (not bAtas):
-                    bKanan = 1
-
-            # Check if the pointer already on the edge
-            if (x2 - 1 < 0 and not bKiri):
-                bKiri = 1
-                x2 = int(cellTrack['X'])
-                y2 = int(cellTrack['Y'])
-
-            if (y2 + 1 == map_size and not bAtas):
-                bAtas = 1
-                x2 = int(cellTrack['X'])
-                y2 = int(cellTrack['Y'])
-
-            # Conditional branch.
-            if (not bKiri):
-                x2 -= 1
-
-            elif (not bAtas):
-                y2 += 1
-
-            elif (not bKanan):
-                x2 += 1
-
-            elif (not bBawah):
-                y2 -= 1
+                elif (not bBawah):
+                    y2 -= 1
 
     shipsOwned = gamestate['PlayerMap']['Owner']['Ships']
     battleshipAvail = checkShips(shipsOwned,'Battleship')
@@ -310,8 +347,6 @@ def fire_shot(gamestate):
     cruiserAvail = checkShips(shipsOwned,'Cruiser')
     destroyerAvail = checkShips(shipsOwned,'Destroyer')
     submarineAvail = checkShips(shipsOwned,'Submarine')
-
-    global typeOfWeapon
 
     if phase != 7:
         if(cruiserAvail == True):
