@@ -1,0 +1,7 @@
+
+12-02-2018 23:25:18:797 - I: 	Added Command FireSingleShotCommand for Player Stima Santuy
+12-02-2018 23:25:18:969 - I: 	Added Command GameEngine.Commands.PlayerCommands.FireDoubleShotCommand for Player Stima Santuy
+12-02-2018 23:25:18:969 - D: 	Beginning round processing
+12-02-2018 23:25:18:969 - D: 	Processing Player Commands
+12-02-2018 23:25:18:969 - D: 	Killing off players who have no ships left
+12-02-2018 23:25:18:969 - D: 	Round processing complete

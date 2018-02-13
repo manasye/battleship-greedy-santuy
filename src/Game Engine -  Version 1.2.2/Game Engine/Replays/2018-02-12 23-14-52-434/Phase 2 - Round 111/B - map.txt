@@ -1,0 +1,56 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 111
+Map Dimensions : 14 x 14
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+############## Player
+~~~~~~~~~~~~~~
+~~~~~S~~~~~~~~
+~Dd~~S~~cCccc~
+~~~~~S~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~B~~
+~~R~~~~~~~~b~~
+~~R~~~~~~~~B~~
+~~R~~~~~~~~b~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+############## Opponent
+~~~~~~~~~~~~~~
+~~~~~~~~~~~!!~
+~*~!~*~!~****!
+~~~~~~~~~~!!!~
+~~~~~~~~~!~~~~
+~~~~~~~~!~~!~~
+~~~~~~~!~~~~~~
+~~~~~~!~~~~*~~
+~~~~~!~~~~~~~~
+~~~~!~~~~~~*~~
+~~~!~~~~~~~~~~
+~~!~~~~~~~~!~~
+~!~~~~~~~~~~~~
+!~~~~~~~~~~!~~
+##############
+
+---------------------------
+Player Name: Stima Santuy
+Available Energy: 4
+Shots: 110
+Hit: 8
+Points: 80
+Arsenal: [SingleShot,SeekerMissile,DoubleShot,DiagonalCrossShot,CornerShot,CrossShot]
+Ships: [Submarine,Destroyer,Battle Ship,Carrier,Cruiser]
+Status: Alive
+Shield: (Status: Deactivated, Charges: 15), Center Point: No Shield
+---------------------------
+Opponent: Stima Santuy
+Points: 70
+Ships: [Submarine,Destroyer,Battle Ship,Carrier,Cruiser]
+Status: Alive
+---------------------------

@@ -1,0 +1,56 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 72
+Map Dimensions : 14 x 14
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+############## Player
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~c~~r~
+~~~~~~~~~c~~r~
+~~~~~~~~~c~~r~
+~~~~~~~~~c~~~~
+~~~~~~~~~c~~~~
+~~~~~~~bbbb~~~
+~~~~~d~~~~s~~~
+~~~~~d~~~~s~~~
+~~~~~~~~~~s~~~
+~~~~~~~~~~~~~~
+############## Opponent
+!~~~~~~~!~!~!~
+!~!~!~!~~~~~~~
+!~~~!~!~*~*~*~
+!~!~~~~~~~~~~~
+!~!~!~!~!~!~!~
+!~~~~~~~~~~~~~
+!~!~!~!~!~!~!~
+!~~~~~~~~~!~!~
+!~*~!~!~!~~~~~
+!~~~~~!~!~!~!~
+!~*~!~~~~~~~~~
+!~!~!~!~!~!~!~
+!!~~~~~~~~~~~~
+!!!~!~!~!~!~!~
+##############
+
+---------------------------
+Player Name: John
+Available Energy: 38
+Shots: 64
+Hit: 5
+Points: 50
+Arsenal: []
+Ships: []
+Status: Dead
+Shield: (Status: Deactivated, Charges: 1), Center Point: No Shield
+---------------------------
+Opponent: Stima Santuy
+Points: 420
+Ships: [Submarine,Destroyer,Battle Ship,Carrier,Cruiser]
+Status: Alive
+---------------------------
