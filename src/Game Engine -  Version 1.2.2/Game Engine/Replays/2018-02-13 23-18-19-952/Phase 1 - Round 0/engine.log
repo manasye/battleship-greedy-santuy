@@ -1,0 +1,12 @@
+
+13-02-2018 23:18:20:243 - I: 	Loaded bot ..\Reference Bots\Our Bot
+13-02-2018 23:18:20:258 - I: 	Loaded bot ..\Reference Bots\Abram
+13-02-2018 23:18:20:259 - I: 	Registered player Stima Santuy
+13-02-2018 23:18:20:260 - I: 	Registered player BotJuara
+13-02-2018 23:18:20:300 - I: 		OK!
+13-02-2018 23:18:22:966 - I: 	Added Command PlaceShipCommand for Player Stima Santuy
+13-02-2018 23:18:23:251 - I: 	Added Command PlaceShipCommand for Player BotJuara
+13-02-2018 23:18:23:254 - D: 	Beginning round processing
+13-02-2018 23:18:23:260 - D: 	Processing Player Commands
+13-02-2018 23:18:23:273 - D: 	Killing off players who have no ships left
+13-02-2018 23:18:23:273 - D: 	Round processing complete

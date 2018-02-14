@@ -1,7 +1,0 @@
-
-12-02-2018 23:31:39:987 - I: 	Added Command FireSingleShotCommand for Player John
-12-02-2018 23:31:40:205 - I: 	Added Command FireCrossShotCommand for Player Stima Santuy
-12-02-2018 23:31:40:205 - D: 	Beginning round processing
-12-02-2018 23:31:40:205 - D: 	Processing Player Commands
-12-02-2018 23:31:40:220 - D: 	Killing off players who have no ships left
-12-02-2018 23:31:40:220 - D: 	Round processing complete

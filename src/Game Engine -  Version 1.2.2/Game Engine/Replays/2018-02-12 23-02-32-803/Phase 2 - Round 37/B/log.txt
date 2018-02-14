@@ -1,8 +1,0 @@
-
-12-02-2018 23:03:05:612 - I: 	Player Command GameEngine.Commands.PlayerCommands.PlaceShieldCommand failed because The shield has no charge and cannot be applied
-12-02-2018 23:03:06:248 - D: 	Executing bot with following commands python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-12 23-02-32-803\Phase 2 - Round 37\B"
-12-02-2018 23:03:06:248 - I: 	Executing process python.exe "bot.py" B "C:\Users\manasyebukit\Documents\GitHub\battleship-greedy-santuy\Game Engine -  Version 1.2.2\Game Engine\Replays\2018-02-12 23-02-32-803\Phase 2 - Round 37\B"
-12-02-2018 23:03:06:264 - I: 	Bot has 4000ms to run before it will be forcefully killed
-12-02-2018 23:03:06:416 - E: 	Output from bot: 
-12-02-2018 23:03:06:416 - I: 	Output from bot: 
-12-02-2018 23:03:06:420 - I: 	Your bots total execution time was 00:00:00.1633915

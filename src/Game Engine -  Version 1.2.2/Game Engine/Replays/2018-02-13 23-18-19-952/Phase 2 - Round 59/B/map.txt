@@ -1,0 +1,56 @@
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Game Version : 1.0.0
+Game Level : 1
+Round Number : 59
+Map Dimensions : 14 x 14
+Phase : 2
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+############## Player
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+~sss~~~~~~~~~~
+~~~~~~~d~~~~~~
+~~~~r~~d~~~~~~
+~~~~r~~~~~~~~~
+~b~~r~~~~~~~~~
+~b~~~~~~~~~~~~
+~b~~~~~~~~~~~~
+~b~~CCCCc~~~~~
+~~~~~~~~~~~~~~
+############## Opponent
+~!!~!!~~!~~~~~
+~~!~!*!!~!~!~!
+!**!!*!!*****!
+~~~~~*~~~~~!~!
+!~!~!!!~!~~~~~
+~~~~~!~~~!~~~!
+~~!!!~!!!~~!~~
+~!~!~!~!~~!*!~
+~~~~!~!~~~~*~~
+~!~!~!~~~!~~~~
+~~~~~~~~~~~~~~
+~~~!~~~!~~~~~~
+~~~~~~~~!~!~~~
+~~~~~~~~~~~~~~
+##############
+
+---------------------------
+Player Name: BotJuara
+Available Energy: 24
+Shots: 56
+Hit: 12
+Points: 210
+Arsenal: [SingleShot,CornerShot]
+Ships: [Carrier]
+Status: Alive
+Shield: (Status: Deactivated, Charges: 0), Center Point: No Shield
+---------------------------
+Opponent: Stima Santuy
+Points: 250
+Ships: [Battle Ship,Cruiser]
+Status: Alive
+---------------------------
